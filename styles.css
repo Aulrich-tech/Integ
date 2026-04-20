@@ -607,6 +607,22 @@
     align-items: flex-start;
   }
 }
+@media (max-width: 576px) {
+  .core-heading {
+    font-size: 1.6rem;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .core-card {
+    max-width: 100%;
+  }
+
+  .carousel-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 /* ============================================================
    NAVIGATION — imported from aboutus.css
    ============================================================ */
