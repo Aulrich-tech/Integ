@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --brand-green: #2e6417;
+            --bg-light: #e2e4d8;
+        }
+
+        body,
+        html {
+            margin: 0;
+            background-color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        :root {
+            /* Text, Banner*/
+            --darkgreen: #2e6417;
+            /* Accent, Badge */
+            --badge: #d1ebd3;
+            /* Blog */
+            --card: #faf7f2;
+            /* Background */
+            --mint: #ecf7ed;
+            /* Form */
+            --lightgreen: #f1f9f1;
+            /* Button, Dropbar */
+            --green: #2e6417;
+            /* Font */
+            --serif: 'Cinzel', serif;
+            /* Font */
+            --sans: 'Montserrat', sans-serif;
+        }
+
+        .nav-pills .nav-link.active {
+            color: white;
+            background-color: var(--darkgreen);
+            border-radius: 40px;
+            padding: 10px 20px;
+        }
+
+        .nav-item .nav-link {
+            color: var(--darkgreen);
+        }
+
+        .banner {
+            background: linear-gradient(rgba(46, 100, 23, 0.8), rgba(46, 100, 23, 0.8)), url('images/phold.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .promo-title {
+            color: var(--brand-green);
+            font-size: clamp(3rem, 6vw, 5.3rem);
+            line-height: 0.95;
+            letter-spacing: -5px;
+        }
+
+        .utensil-container {
+            position: absolute;
+            top: -65px;
+            left: 400px;
+        }
+
+
+        .best-seller-section {
+            background-color: var(--bg-light);
+            padding-bottom: 5rem;
+        }
+
+        .product-card {
+            background-color: #4e6b31;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 30px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .product-img {
+            width: 190px;
+            height: 200px;
+            object-fit: cover;
+            position: absolute;
+            left: -45px;
+        }
+
+        .product-content {
+            padding-left: 140px;
+            color: #fff;
+            width: 100%;
+        }
+
+        .price-badge-green {
+            background-color: #2e6417;
+            color: white;
+            border-radius: 50px;
+            padding: 4px 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .price-badge-gray {
+            background-color: #5a6268;
+            color: white;
+            border-radius: 50px;
+            padding: 4px 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .menu-section {
+            background-color: #2e6417;
+            padding: 60px 0 30px 0;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .menu-container-constrained {
+            margin: 0 2%;
+        }
+
+        /* ===== NAV FROM CONTACT PAGE ===== */
+        .logo-section {
+            border-bottom: 8px solid #2e5c1d;
+            margin-bottom: -50px;
+        }
+
+        .green-banner {
+            background-color: #2e5c1d;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            line-height: 1.6;
+        }
+
+        .navbar-custom .nav-link {
+            color: #2e5c1d;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0px;
+            padding: 10px 15px !important;
+            transition: all 0.3s ease;
+            margin-right: 50px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #c9a961;
+        }
+
+        .navbar-custom .nav-link.active {
+            background-color: #2e5c1d;
+            color: white !important;
+            border-radius: 30px;
+            padding: 12px 28px !important;
+        }
+
+        .brand-title {
+            font-family: 'Georgia', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #2e5c1d;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-left: 50px;
+        }
+
+        .brand-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            color: #333333;
+            letter-spacing: 1px;
+            margin-left: 50px;
+        }
+
+        .menu-hero-section {
+            position: relative;
+            background-color: #2e5c1d;
+            padding: 100px 0;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .menu-hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: white;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .menu-breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-breadcrumb .breadcrumb-item {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-breadcrumb .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-breadcrumb .breadcrumb-item a:hover {
+            color: #c9a961;
+        }
+
+        .menu-breadcrumb .breadcrumb-item.active {
+            color: white;
+        }
+
+        .menu-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+            content: ">>";
+            color: white;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        .menu-badge {
+            display: inline-block;
+            padding: 8px 60px;
+            border-radius: 50px;
+            background-color: #2e6417;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            border: 2px solid white;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .menu-icon-img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-text {
+            font-size: 1.15rem;
+            margin-top: 12px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .category-item {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category-active {
+            border-bottom: 4px solid white;
+            padding-bottom: 5px;
+        }
+
+        .category-active .menu-icon-img {
+            filter: brightness(1.2) drop-shadow(0 0 10px white);
+        }
+
+        .menu-carousel-btn {
+            width: 50px;
+            height: 50px;
+            background-color: #e2e4d8;
+            border-radius: 50%;
+            top: 55%;
+            transform: translateY(-50%);
+            opacity: 1 !important;
+            border: none;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+        }
+
+        .btn-prev {
+            left: 20px;
+        }
+
+        .btn-next {
+            right: 20px;
+        }
+
+        .modal-xl {
+            max-width: 1100px;
+        }
+
+        .modal-content-custom {
+            background-color: var(--bg-light);
+            border: 8px solid #2e6417;
+            border-radius: 3rem;
+        }
+
+        .btn-close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3rem;
+            color: #2e6417;
+            background: none;
+            border: none;
+            line-height: 1;
+            z-index: 10;
+        }
+
+        .flavor-bullet {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 1400px) {
+            .menu-container-constrained {
+                margin: 0 3%;
+            }
+
+            .btn-prev {
+                left: 20px;
+            }
+
+            .btn-next {
+                right: 20px;
+            }
+        }
+
+        #menu-display-container {
+            max-width: 100%;
+            padding-left: 5% !important;
+            padding-right: 5% !important;
+        }
+
+        #product-grid .font-cinzel {
+            font-size: 1.4rem !important;
+        }
+
+        #product-grid .price-badge-green,
+        #product-grid .price-badge-gray {
+            font-size: 1.1rem !important;
+            padding: 6px 20px !important;
+        }
+
+        #product-grid .small {
+            font-size: 1rem !important;
+        }
+
+        .party-table {
+            font-family: 'Montserrat', sans-serif !important;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .party-table thead th {
+            background-color: #4e6b31;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: none;
+        }
+
+        .party-table thead th:last-child {
+            border-right: none;
+        }
+
+        .party-table td {
+            padding: 15px 20px;
+            color: #4e6b31;
+            font-weight: 600;
+            border-right: 1px solid rgba(46, 100, 23, 0.1);
+            border-bottom: 1px solid rgba(46, 100, 23, 0.1);
+        }
+
+        .party-table td:last-child {
+            border-right: none;
+        }
+
+        .party-table tbody tr:nth-child(even) {
+            background-color: #f8f9f2;
+        }
+
+        .party-table tbody tr:hover {
+            background-color: #f1f3e8 !important;
+            transition: 0.3s;
+        }
+
+        .price-text {
+            font-weight: 700;
+            color: #4e6b31;
+        }
+
+        .drinks-table {
+            font-family: 'Montserrat', sans-serif !important;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .drinks-table thead th {
+            background-color: #4e6b31;
+            color: white;
+            text-transform: uppercase;
+            padding: 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .drinks-table td {
+            padding: 12px 15px;
+            color: #4e6b31;
+            font-weight: 600;
+            border-right: 1px solid rgba(46, 100, 23, 0.1);
+            border-bottom: 1px solid rgba(46, 100, 23, 0.1);
+        }
+
+        .drinks-table td:last-child,
+        .drinks-table th:last-child {
+            border-right: none;
+        }
+
+        .drinks-table tbody tr:nth-child(even) {
+            background-color: #f8f9f2;
+        }
+
+        .drinks-img-container {
+            background-color: #4e6b31;
+            border-radius: 2rem;
+            padding: 15px;
+            height: 100%;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .loyalty-accordion .accordion-button:not(.collapsed) {
+            box-shadow: none;
+            color: white;
+        }
+
+        .loyalty-accordion .accordion-item {
+            overflow: hidden;
+            border-radius: 12px !important;
+        }
+
+        .custom-loyalty-accordion .accordion-button::after {
+            background-color: #fff;
+            border-radius: 50%;
+
+            background-size: 12px;
+            background-position: center;
+
+            width: 30px;
+            height: 30px;
+
+            transition: transform 0.3s ease;
+
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e6417'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+        .custom-loyalty-accordion .accordion-button:not(.collapsed)::after {
+            transform: rotate(-180deg);
+            background-color: #e2e4d7;
+        }
+
+        .custom-loyalty-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        .category-item {
+            cursor: pointer;
+            transition: transform 0.2s;
+            padding-bottom: 5px;
+        }
+
+        .category-active {
+            border-bottom: none;
+            box-shadow: 0 4px 0 0 white;
+            padding-bottom: 5px;
+        }
+
+        /* ===== RESPONSIVE OVERRIDES ===== */
+
+        /* Large desktop: keep 2.5in margins */
+        @media (min-width: 1400px) {
+            .menu-container-constrained {
+                margin: 0 2.5in;
+            }
+
+            .btn-prev {
+                left: 2in;
+            }
+
+            .btn-next {
+                right: 2in;
+            }
+        }
+
+        /* Desktop / laptop (1200px – 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .menu-container-constrained {
+                margin: 0 4%;
+            }
+
+            .btn-prev {
+                left: 30px;
+            }
+
+            .btn-next {
+                right: 30px;
+            }
+        }
+
+        /* iPad Pro / large tablet (992px – 1199px) */
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .menu-container-constrained {
+                margin: 0 2%;
+            }
+
+            .btn-prev {
+                left: 15px;
+            }
+
+            .btn-next {
+                right: 15px;
+            }
+
+            .brand-title {
+                font-size: 28px;
+                margin-left: 20px;
+            }
+
+            .brand-subtitle {
+                margin-left: 20px;
+            }
+
+            .navbar-custom .nav-link {
+                margin-right: 10px;
+                font-size: 13px;
+                padding: 8px 8px !important;
+            }
+
+            .navbar-custom .nav-link.active {
+                padding: 10px 18px !important;
+            }
+
+            .promo-title {
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                letter-spacing: -3px;
+            }
+
+            .utensil-container {
+                left: auto;
+                right: -20px;
+                top: -40px;
+            }
+        }
+
+        /* iPad / medium tablet (768px – 991px) */
+        @media (max-width: 991px) and (min-width: 768px) {
+            .menu-container-constrained {
+                margin: 0 2%;
+            }
+
+            .btn-prev {
+                left: 10px;
+            }
+
+            .btn-next {
+                right: 10px;
+            }
+
+            .brand-title {
+                font-size: 24px;
+                margin-left: 10px;
+            }
+
+            .brand-subtitle {
+                font-size: 11px;
+                margin-left: 10px;
+            }
+
+            .navbar-custom .nav-link {
+                margin-right: 5px;
+                font-size: 12px;
+                padding: 6px 6px !important;
+            }
+
+            .navbar-custom .nav-link.active {
+                padding: 8px 14px !important;
+            }
+
+            .promo-title {
+                font-size: clamp(2rem, 5vw, 3.2rem);
+                letter-spacing: -2px;
+            }
+
+            .utensil-container {
+                display: none;
+            }
+
+            .menu-hero-title {
+                font-size: 36px;
+            }
+
+            .product-img {
+                width: 130px;
+                height: 140px;
+                left: -30px;
+            }
+
+            .product-content {
+                padding-left: 100px;
+            }
+
+            .product-card {
+                margin-left: 15px;
+            }
+
+            #loyalty-card-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .modal-xl {
+                max-width: 95vw;
+            }
+
+            #modal-img {
+                width: 250px !important;
+                height: 250px !important;
+            }
+
+            .menu-icon-img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .category-text {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Phone / small tablet (< 768px) */
+        @media (max-width: 767px) {
+            .menu-container-constrained {
+                margin: 0 1%;
+            }
+
+            .btn-prev {
+                left: 5px;
+            }
+
+            .btn-next {
+                right: 5px;
+            }
+
+            /* Navbar */
+            .brand-title {
+                font-size: 20px;
+                margin-left: 8px;
+            }
+
+            .brand-subtitle {
+                font-size: 10px;
+                margin-left: 8px;
+            }
+
+            .navbar-custom .nav-link {
+                margin-right: 0;
+                font-size: 14px;
+                padding: 10px 12px !important;
+            }
+
+            .navbar-custom .nav-link.active {
+                border-radius: 20px;
+                padding: 10px 20px !important;
+            }
+
+            .navbar-collapse {
+                padding-top: 10px;
+            }
+
+            /* Hero section */
+            .menu-hero-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+
+            .menu-hero-title {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .menu-hero-subtitle {
+                font-size: 14px;
+            }
+
+            /* Promo section */
+            .container-fluid.px-5 {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+
+            .promo-title {
+                font-size: clamp(2.2rem, 10vw, 3.5rem);
+                letter-spacing: -2px;
+            }
+
+            .utensil-container {
+                display: none;
+            }
+
+            .col-lg-5.ps-lg-5,
+            .col-lg-7 {
+                text-align: center !important;
+            }
+
+            /* Best seller cards */
+            .product-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+                margin-left: 0;
+                padding-top: 4.5rem;
+            }
+
+            .product-img {
+                width: 100px;
+                height: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -45px;
+                position: absolute;
+            }
+
+            .product-content {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .product-content .text-end {
+                text-align: center !important;
+            }
+
+            /* Menu badge */
+            .menu-badge {
+                font-size: 1.2rem;
+                padding: 8px 30px;
+            }
+
+            /* Category icons */
+            .menu-icon-img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .category-text {
+                font-size: 0.75rem;
+            }
+
+            .menu-carousel-btn {
+                width: 36px;
+                height: 36px;
+            }
+
+            /* Modal */
+            .modal-xl {
+                max-width: 95vw;
+            }
+
+            .modal-body.p-5 {
+                padding: 1.5rem !important;
+            }
+
+            .btn-close-modal {
+                top: 15px;
+                right: 20px;
+                font-size: 2rem;
+            }
+
+            #modal-img {
+                width: 100% !important;
+                height: 200px !important;
+            }
+
+            .modal-content-custom {
+                border-radius: 1.5rem;
+                border-width: 5px;
+            }
+
+            #modal-title {
+                font-size: 1.8rem !important;
+            }
+
+            .d-flex.gap-3 {
+                flex-wrap: wrap;
+                gap: 0.5rem !important;
+            }
+
+            /* Loyalty card */
+            #loyalty-card-section h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            #loyalty-card-section p {
+                font-size: 1rem;
+            }
+
+            /* Menu display */
+            #menu-display-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            /* Green banner */
+            .green-banner {
+                font-size: 13px;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        /* Small phones (< 480px) */
+        @media (max-width: 479px) {
+            .brand-title {
+                font-size: 17px;
+            }
+
+            .menu-hero-title {
+                font-size: 22px;
+            }
+
+            .promo-title {
+                font-size: clamp(1.8rem, 9vw, 2.5rem);
+            }
+
+            .menu-icon-img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .category-text {
+                font-size: 0.65rem;
+            }
+
+            .menu-badge {
+                font-size: 1rem;
+                padding: 6px 20px;
+            }
+
+            #loyalty-card-section h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== LOGO SECTION ===== -->
+    <div class="logo-section bg-white text-center py-5 px-3">
+        <img src="menu/logaur.webp" alt="House of Us Logo" class="img-fluid mb-3" style="max-width: 400px;">
+    </div>
+
+    <!-- ===== GREEN BANNER ===== -->
+    <div class="green-banner text-center py-3 px-4">
+        BRINGING PEOPLE TOGETHER OVER THE COMFORT FOOD YOU LOVE AND THE COZY ATMOSPHERE YOU DESERVE.
+    </div>
+
+    <!-- ===== NAVIGATION SECTION ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom bg-white border-bottom py-4 px-4">
+        <div class="container-fluid">
+            <div class="d-flex flex-column">
+                <span class="brand-title">HOUSE OF US</span>
+                <span class="brand-subtitle mt-2">A TASTE OF HOME</span>
+            </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="menu.html">MENU & SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">BLOG & REVIEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">SUPPORT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENU HERO SECTION ===== -->
+    <section class="menu-hero-section">
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <h1 class="menu-hero-title">MENU AND SERVICES</h1>
+                    <p class="menu-hero-subtitle">
+                        We serve freshly cooked, flavorful dishes made with love—perfect for sharing and sulit sa bawat
+                        bite.<br>
+                        Every meal is made to order, never reheated, for guaranteed freshness.
+                    </p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb menu-breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="home.html">HOME</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">MENU AND SERVICES</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container-fluid px-4 px-md-5 py-5 min-vh-100 d-flex align-items-center">
+        <div class="row align-items-center w-100">
+            <div class="col-lg-5 ps-lg-5">
+                <p class="fs-3 mb-0" style="color: var(--brand-green);">Your Birthday, Our Treat!</p>
+                <div class="position-relative d-inline-block">
+                    <div class="utensil-container">
+                        <img src="menu/hero.png" alt="Logo" style="width: 100px;">
+                    </div>
+                    <h1 class="font-cinzel fw-bolder promo-title mt-2">BIRTHDAY<br>MONTH PROMO</h1>
+                </div>
+                <p class="mt-4 mb-5 fs-5" style="color: var(--brand-green); text-align: justify;">
+                    Celebrate your special month with a sweet treat on us! Enjoy a FREE waffle when you reach a minimum
+                    bill of 1000, or upgrade your celebration with a FREE waffle and pitcher of houseblend iced tea for
+                    a minimum of 3000.
+                </p>
+                <p class="fw-bold fs-5" style="color: var(--brand-green);">
+                    Valid for dine-in only. Please present your valid I.D to our cashier upon ordering.
+                </p>
+            </div>
+            <div class="col-lg-7 text-center position-relative">
+                <div class="hero-circle-bg"></div>
+                <img src="menu/hero2.png" class="img-fluid img-main position-relative" style="z-index: 1; width: 70%;">
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="best-seller-section">
+        <div class="container-fluid px-3 px-md-5">
+            <div class="text-center py-5">
+                <div class="d-inline-block px-5 py-2 rounded-pill text-white fw-bold"
+                    style="background-color: #4e6b31;">OUR BEST SELLERS</div>
+            </div>
+            <div class="row g-5 justify-content-center">
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="product-card"
+                        onclick="openDetailModal('BIBIMBAP (PORK/BEEF)', 'Best Sellers', '169', '', 'menu/ricemeals/bulgogi.png', 'Rice topped with veggies, kani, kimchi, meat and egg.')">
+                        <img src="menu/ricemeals/bulgogi.png" class="product-img">
+                        <div class="product-content">
+                            <h5 class="font-cinzel fw-bold mb-1">BIBIMBAP (PORK/BEEF)</h5>
+                            <p class="small mb-3">Rice topped with veggies, kani, kimchi, meat and egg.</p>
+                            <div class="text-end">
+                                <span class="price-badge-white">₱ 169</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="product-card"
+                        onclick="openDetailModal('CREAMY CARBONARA', 'Best Sellers', '159', '219', 'menu/pasta.png', 'Rich and creamy white sauce pasta with bacon and parmesan.')">
+                        <img src="menu/pasta.png" class="product-img">
+                        <div class="product-content">
+                            <h5 class="font-cinzel fw-bold mb-1">CREAMY CARBONARA</h5>
+                            <p class="small mb-3">Rich and creamy white sauce pasta with bacon and parmesan.</p>
+                            <div class="text-end">
+                                <span class="price-badge-white">₱ 159</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="product-card"
+                        onclick="openDetailModal('CALIFORNIA SUSHI ROLL', 'Best Sellers', '149', '289', 'menu/sushi/california.png', 'Classic roll with kani, cucumber, and mango topped with masago.')">
+                        <img src="menu/sushi/california.png" class="product-img">
+                        <div class="product-content">
+                            <h5 class="font-cinzel fw-bold mb-1">CALIFORNIA SUSHI ROLL</h5>
+                            <p class="small mb-3">Classic roll with kani, cucumber, and mango topped with masago.</p>
+                            <div class="text-end">
+                                <span class="price-badge-white">₱ 149</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end mt-2 pe-2">
+                        <button class="btn fw-bold border-0 shadow-none" id="viewMoreBtn"
+                            style="color: var(--brand-green);">View More →</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-badge">MENU</div>
+        <div class="menu-container-constrained">
+            <div id="categoryCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row text-center text-white g-2 justify-content-center py-4">
+                            <div class="col-4 col-md-2 category-item" data-category="Best Sellers"><img
+                                    src="menu/hat.png" class="menu-icon-img">
+                                <p class="category-text">Best Sellers</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Budget Meal"><img
+                                    src="menu/budgetmeal.png" class="menu-icon-img">
+                                <p class="category-text">Budget Meal</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Rice Meals"><img
+                                    src="menu/ricemeals.png" class="menu-icon-img">
+                                <p class="category-text">Rice Meals</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Burger"><img src="menu/burgers.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Burger</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Pasta"><img src="menu/pasta.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Pasta</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Noodles and Soup"><img
+                                    src="menu/noodles.png" class="menu-icon-img">
+                                <p class="category-text">Noodles & Soup</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row text-center text-white g-2 justify-content-center py-4">
+                            <div class="col-4 col-md-2 category-item" data-category="Sushi"><img src="menu/sushi.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Sushi</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Salad"><img src="menu/salad.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Salad</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Waffles"><img src="menu/waffle.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Waffles</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Drinks"><img src="menu/drinks.png"
+                                    class="menu-icon-img">
+                                <p class="category-text">Drinks</p>
+                            </div>
+                            <div class="col-4 col-md-2 category-item" data-category="Party Sizes"><img
+                                    src="menu/partysize.png" class="menu-icon-img">
+                                <p class="category-text">Party Sizes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="menu-carousel-btn btn-prev" data-bs-target="#categoryCarousel" data-bs-slide="prev"><span
+                class="carousel-control-prev-icon" style="filter: invert(1);"></span></button>
+        <button class="menu-carousel-btn btn-next" data-bs-target="#categoryCarousel" data-bs-slide="next"><span
+                class="carousel-control-next-icon" style="filter: invert(1);"></span></button>
+    </div>
+
+    <div id="menu-display-container" class="container py-5">
+        <h2 id="display-title" class="font-cinzel fw-bold mb-5"
+            style="color: var(--brand-green); border-left: 10px solid var(--brand-green); padding-left: 15px;"></h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5" id="product-grid"></div>
+    </div>
+
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-body p-5 position-relative">
+                    <button type="button" class="btn-close-modal" data-bs-dismiss="modal">×</button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 text-center">
+                            <img src="" id="modal-img" class=""
+                                style=" width: 350px; height: 350px; object-fit: cover;">
+                        </div>
+                        <div class="col-lg-7 ps-lg-5">
+                            <h1 class="font-cinzel fw-bold mb-0" id="modal-title"
+                                style="color: var(--brand-green); font-size: 2.8rem;">PRODUCT NAME</h1>
+                            <hr style="border: 2px solid #4e6b31; opacity: 0.3; margin: 20px 0;">
+                            <p class="mb-4" id="modal-desc" style="color: var(--brand-green); font-size: 1.1rem;"></p>
+                            <div id="flavor-section">
+                                <h6 class="fw-bold mb-3" id="flavor-header" style="color: var(--brand-green);">Available
+                                    Flavors:</h6>
+                                <div class="row g-2 mb-4" id="flavor-list"
+                                    style="font-weight: 600; color: var(--brand-green);"></div>
+                            </div>
+                            <p class="mb-4" style="color: var(--brand-green);"><strong>Category:</strong> <span
+                                    id="modal-cat-label" class="text-decoration-underline">Category</span></p>
+                            <div class="d-flex gap-3" id="price-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100" style="height: 80px; background-color: #e2e4d7; margin-top: -5px; margin-bottom: -5px;"></div>
+
+    <section id="loyalty-card-section" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <img src="menu/chefhat.png" alt="Chef Hat" class="mb-3" style="width: 80px;">
+
+                <h1 class="font-cinzel fw-bold mb-4"
+                    style="color: var(--brand-green); letter-spacing: 4px; font-size: 3.5rem;">
+                    LOYALTY CARD
+                </h1>
+
+                <p class="mx-auto"
+                    style="max-width: 1000px; color: #222; font-weight: 500; font-size: 1.3rem; line-height: 1.2;">
+                    Eat. Earn. Enjoy. Get your free loyalty card and earn discounts & rewards once you complete your
+                    stamp collection every time you dine with us. Available for dine-in, pickup, and delivery. Ask our
+                    friendly staff about it when you order today!
+                </p>
+            </div>
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7">
+                    <div class="">
+                        <img src="menu/loyaltycard.png" class="img-fluid w-100" alt="House of Us Loyalty Card">
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="accordion custom-loyalty-accordion" id="loyaltyAccordion">
+
+                        <div class="accordion-item mb-2 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button font-cinzel fw-bold text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    style="background-color: #4e6b31;">
+                                    HOW TO EARN STAMPS
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#loyaltyAccordion">
+                                <div class="accordion-body py-4"
+                                    style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">
+                                    <ul class="ps-3 mb-0">
+                                        <li>Get one (1) stamp per day when you dine at the restaurant.</li>
+                                        <li>A minimum single purchase of ₱300 is required to receive a stamp.</li>
+                                        <li>The loyalty card can be used for dine-in, pickup, or delivery orders.</li>
+                                        <li>Present the loyalty card when ordering so the staff can give your stamp.
+                                        </li>
+                                        <li>Only one stamp is allowed per day, even if you make multiple purchases.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-2 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed font-cinzel fw-bold text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    style="background-color: #4e6b31;">
+                                    REWARDS
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#loyaltyAccordion">
+                                <div class="accordion-body py-4"
+                                    style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">
+                                    <ul class="ps-3 mb-0">
+                                        <li><strong>10% Discount</strong> (Capped at ₱200)</li>
+                                        <li><strong>FREE 8pcs Salad Rolls</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed font-cinzel fw-bold text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    style="background-color: #4e6b31;">
+                                    TERMS & CONDITIONS
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#loyaltyAccordion">
+                                <div class="accordion-body py-4"
+                                    style="font-family: 'Montserrat', sans-serif; font-size: 1rem;">
+                                    <ul class="ps-3 mb-0" style="font-size: 0.9rem;">
+                                        <li>The loyalty card must be presented at the time of purchase to receive a
+                                            stamp.</li>
+                                        <li>One stamp per day only regardless of the number of transactions.</li>
+                                        <li>The minimum purchase of ₱300 must be in a single transaction.</li>
+                                        <li>Completed stamps must be shown to claim the reward.</li>
+                                        <li>The 10% discount cannot exceed ₱200.</li>
+                                        <li>The loyalty card is non-transferable.</li>
+                                        <li>The restaurant reserves the right to modify terms.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #e8e8dc;">
+        <div class="container py-5">
+            <div class="row g-4">
+
+                <!-- Brand -->
+                <div class="col-lg-3 col-md-12">
+                    <img src="images/logo.png" alt="House of Us" class="img-fluid mb-3" style="max-width: 160px;">
+                    <p class="small mb-3" style="color: #555; line-height: 1.7;">
+                        Bringing people together over the comfort food you love and the cozy atmosphere you deserve.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/HouseOfUsValenzuela" target="_blank"
+                            class="rounded-2 d-flex align-items-center justify-content-center text-decoration-none"
+                            style="width:38px;height:38px;border:1px solid #2e5c1d;color:#2e5c1d;font-size:16px;background-color: #fff;">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="rounded-2 d-flex align-items-center justify-content-center text-decoration-none"
+                            style="width:38px;height:38px;border:1px solid #2e5c1d;color:#2e5c1d;font-size:16px;background-color: #fff;">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigate -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">NAVIGATE</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li><a href="home.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">HOME</a></li>
+                                <li><a href="aboutus.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">ABOUT</a></li>
+                                <li><a href="menu.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">MENU &amp; SERVICES</a></li>
+                                <li><a href="blog.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">BLOG &amp; REVIEWS</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-5">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li><a href="support.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">SUPPORT</a></li>
+                                <li><a href="team.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">OUR TEAM</a></li>
+                                <li><a href="contact.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">CONTACTS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">CONTACTS</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="mailto:houseofus@gmail.com" class="text-decoration-none small"
+                                style="color:#333;">houseofus@gmail.com</a></li>
+                        <li><span class="small" style="color:#333;">09694022013</span></li>
+                        <li><span class="small" style="color:#333;">09193126874</span></li>
+                    </ul>
+                </div>
+
+                <!-- Reserve -->
+                <div class="col-lg-3 col-md-12">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">RESERVATIONS</h6>
+                    <p class="small mb-3" style="color:#555; line-height:1.7;">
+                        Planning a visit? Book your table and we'll have everything ready for you.
+                    </p>
+                    <a href="contact.html"
+                        class="text-decoration-none small fw-semibold d-inline-block rounded-pill px-4 py-2 mb-2 text-white"
+                        style="background-color:#2e5c1d; letter-spacing:1px;">
+                        <i class="bi bi-calendar-check me-1"></i> RESERVE A TABLE
+                    </a>
+                    <ul class="list-unstyled d-flex flex-column gap-1 mt-3">
+                        <li class="small" style="color:#555;"><i class="bi bi-geo-alt-fill me-1"
+                                style="color:#2e5c1d;"></i> Valenzuela City</li>
+                        <li class="small" style="color:#555;"><i class="bi bi-geo-alt-fill me-1"
+                                style="color:#2e5c1d;"></i> Caloocan City</li>
+                        <li class="small" style="color:#555;"><i class="bi bi-clock-fill me-1"
+                                style="color:#2e5c1d;"></i> Mon–Sun, 11AM – 10PM</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="py-3" style="border-top: 2px solid #2e5c1d;">
+            <div class="container d-flex flex-wrap align-items-center gap-2">
+                <i class="bi bi-c-circle small" style="color:#555;"></i>
+                <p class="mb-0 small" style="color:#555;">2026 House Of Us. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const heroIcon = 'menu/hero.png';
+        const titleIcon = 'menu/utensils.png';
+
+        const menuData = {
+            "Best Sellers": {
+                products: [{
+                    name: "BIBIMBAP (PORK/BEEF)",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/ricemeals/bulgogi.png",
+                    desc: "Rice topped with veggies, kani, kimchi, meat and egg."
+                },
+                {
+                    name: "PORK KATSUDON",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/ricemeals/katsudon.png",
+                    desc: "Breaded pork simmered with katsu sauce and egg."
+                },
+                {
+                    name: "CREAMY CARBONARA",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/pasta.png",
+                    desc: "Creamy white sauce pasta with savory meat and a smooth, rich texture."
+                },
+                {
+                    name: "CRABSTICKS SALAD ROLL",
+                    price1: "109",
+                    price2: "209",
+                    price3: "309",
+                    img: "menu/salad/crab.png",
+                    desc: "Fresh lettuce, carrots, cucumber, mango, kani & noodles."
+                },
+                {
+                    name: "CHEESE BURGER",
+                    price1: "129",
+                    price2: "189",
+                    img: "menu/burger/cheeseburger.png",
+                    desc: "100% Beef patty, lettuce, cucumber, cheese, dressing, burger dressing inside the bun."
+                },
+                {
+                    name: "TOFU SISIG WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/tofusisig.png",
+                    desc: "Sizzling tofu with sisig sauce, egg and rice."
+                },
+                {
+                    name: "Caesar Salad",
+                    price1: "199",
+                    price2: null,
+                    img: "menu/salad/fs3.png",
+                    desc: "Lettuce, cucumber, carrots, mango, tomato, croutons, tosted bacon drizzled with roasted sesame salad dressing."
+                },
+                {
+                    name: "CALIFORNIA SUSHI ROLLS",
+                    price1: "159",
+                    price2: null,
+                    img: "menu/sushi/california.png",
+                    desc: "8pcs. Japanese rice, crabsticks, cucumber, mango, carrot wrapped in nori sheet."
+                },
+                {
+                    name: "CHICKEN PESTO",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/chickenpesto.png",
+                    desc: "Pasta with basil pesto and chicken, offering a fresh and herby flavor."
+                },
+                ]
+            },
+            "Budget Meal": {
+                products: [{
+                    name: "SWEET HAM WITH EGG & RICE",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/ricemeals/rc1.png",
+                    desc: "1 pc Sweet Ham with egg and rice."
+                },
+                {
+                    name: "LONGGANISA WITH EGG & RICE",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/ricemeals/rc2.png",
+                    desc: "1 pc skinless longganisa with rice."
+                },
+                {
+                    name: "HOTDOG WITH EGG & RICE",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/ricemeals/rc3.png",
+                    desc: "1 pc TJ hotdog with egg and rice."
+                },
+                {
+                    name: "CHICKEN WITH EGG & RICE",
+                    price1: "89",
+                    price2: null,
+                    img: "menu/ricemeals/rc4.png",
+                    desc: "Breaded chicken fillet with rice and gravy."
+                },
+                {
+                    name: "SHANGHAI WITH EGG & RICE",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/ricemeals/rc5.png",
+                    desc: "2 pcs pork shanghai with egg and rice."
+                },
+                {
+                    name: "BACON WITH EGG & RICE",
+                    price1: "89",
+                    price2: null,
+                    img: "menu/ricemeals/rc6.png",
+                    desc: "Bacon strips with egg and rice."
+                },
+                {
+                    name: "SPAM WITH EGG & RICE",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/ricemeals/rc7.png",
+                    desc: "1 pc spam with egg and rice."
+                }
+                ]
+            },
+            "Rice Meals": {
+                hasAccordion: true,
+                products: [{
+                    name: "CHICKEN FILLET W EGG",
+                    price1: "109",
+                    price2: "169",
+                    img: "menu/ricemeals/chickenfillet.png",
+                    desc: "Breaded chicken fillet, gravy with egg and rice."
+                },
+                {
+                    name: "LONGGANISA WITH EGG",
+                    price1: "109",
+                    price2: "169",
+                    img: "menu/ricemeals/rc2.png",
+                    desc: "3 pcs skinless longganisa with egg and rice."
+                },
+                {
+                    name: "HOTDOG WITH EGG",
+                    price1: "109",
+                    price2: "169",
+                    img: "menu/ricemeals/rc3.png",
+                    desc: "2 pcs TJ hotdog with egg and rice."
+                },
+                {
+                    name: "SWEET HAM WITH EGG",
+                    price1: "109",
+                    price2: "169",
+                    img: "menu/ricemeals/rc1.png",
+                    desc: "3 pcs sweet ham with egg and rice garlic on top."
+                },
+                {
+                    name: "HUNGARIAN SAUSAGE WITH EGG",
+                    price1: "119",
+                    price2: "179",
+                    img: "menu/ricemeals/hungarian.png",
+                    desc: "1 pc hungarian sausage with egg and rice."
+                },
+                {
+                    name: "SHANGHAI WITH EGG",
+                    price1: "119",
+                    price2: "179",
+                    img: "menu/ricemeals/rc5.png",
+                    desc: "4 pcs pork shanghai with egg and rice garlic on top."
+                },
+                {
+                    name: "BACON WITH EGG",
+                    price1: "129",
+                    price2: "189",
+                    img: "menu/ricemeals/rc6.png",
+                    desc: "Bacon strips with egg and rice garlic on top."
+                },
+                {
+                    name: "SPAM WITH EGG",
+                    price1: "129",
+                    price2: "189",
+                    img: "menu/ricemeals/rc7.png",
+                    desc: "2 pcs spam with egg and rice garlic on top."
+                },
+                {
+                    name: "FISH FILLET WITH EGG",
+                    price1: "129",
+                    price2: "189",
+                    img: "menu/ricemeals/fishfillet.png",
+                    desc: "Breaded cream dory fish with egg and rice garlic on top."
+                },
+                {
+                    name: "BANGUS WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/bangus.png",
+                    desc: "Boneless bangus with egg and rice garlic on top."
+                },
+                {
+                    name: "PORKCHOP WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/porkchop.png",
+                    desc: "Sizzling porkchop with gravy, egg and rice."
+                },
+                {
+                    name: "TOFU SISIG WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/tofusisig.png",
+                    desc: "Sizzling tofu with sisig sauce, egg and rice."
+                },
+                {
+                    name: "PORK SISIG WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/porksisig.png",
+                    desc: "Sizzling pork with sisig sauce, egg and rice."
+                },
+                {
+                    name: "CHICKEN SISIG WITH EGG",
+                    price1: "139",
+                    price2: "199",
+                    img: "menu/ricemeals/chickensisig.png",
+                    desc: "Sizzling chicken with sisig sauce, egg and rice."
+                },
+                {
+                    name: "CHICKEN WINGS WITH EGG",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/bs1.png",
+                    desc: "3 pieces of breaded flavor chicken wings with egg and rice.",
+                    flavors: ["Korean BBQ", "Garlic Parmesan", "Soy Garlic", "Sweet Chili", "Honey Sriracha", "Teriyaki", "Salt Egg", "Hickory BBQ"]
+                },
+                {
+                    name: "CHICKEN TERIYAKI W EGG",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/ricemeals/teriyaki.png",
+                    desc: "Juicy chicken breast coated with teriyaki sauce."
+                },
+                {
+                    name: "PORK KATSUDON",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/ricemeals/katsudon.png",
+                    desc: "Breaded pork simmered with katsu sauce and egg."
+                },
+                {
+                    name: "SWEET & SOUR (FISH/PORK/CHICK)",
+                    price1: "159",
+                    price2: "209",
+                    img: "menu/ricemeals/sweetnsour.png",
+                    desc: "A must-try sweet and sour dish.",
+                    flavors: ["Fish", "Pork", "Chicken"]
+                },
+                {
+                    name: "BIBIMBAP (PORK/BEEF)",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/ricemeals/bulgogi.png",
+                    desc: "Rice topped with veggies, kani, kimchi, meat and egg."
+                },
+                {
+                    name: "BURGER STEAK WITH EGG",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/ricemeals/steak.png",
+                    desc: "100% beef patty in gravy sauce and egg with rice."
+                },
+                {
+                    name: "BEEF TAPA WITH EGG",
+                    price1: "179",
+                    price2: "239",
+                    img: "menu/ricemeals/tapa.png",
+                    desc: "Batangas beef tapa with egg and rice."
+                },
+                {
+                    name: "PORK CALDERETA",
+                    price1: "179",
+                    price2: "239",
+                    img: "menu/ricemeals/caldereta.png",
+                    desc: "Pork lean in mild spicy caldereta sauce with rice."
+                },
+                {
+                    name: "BUTTERED SHRIMP",
+                    price1: "179",
+                    price2: null,
+                    img: "menu/ricemeals/shrimp.png",
+                    desc: "Fresh peeled shrimp coated in butter based sauce."
+                }
+                ],
+            },
+            "Pasta": {
+                products: [{
+                    name: "AGLIO OLIO",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/pasta/tunapesto.png",
+                    desc: "Light pasta in olive oil and garlic, with your choice of shrimp, chicken, or fish."
+                },
+                {
+                    name: "CLASSIC SPAGHETTI",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/pasta/spag.png",
+                    desc: "Filipino-style spaghetti with a slightly sweet tomato sauce, meat, and cheese."
+                },
+                {
+                    name: "CREAMY CARBONARA",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/pasta.png",
+                    desc: "Creamy white sauce pasta with savory meat and a smooth, rich texture."
+                },
+                {
+                    name: "CHICKEN ALFREDO",
+                    price1: "149",
+                    price2: "209",
+                    img: "menu/pasta/alfredo.png",
+                    desc: "Pasta in creamy Alfredo sauce topped with tender grilled chicken."
+                },
+                {
+                    name: "CHICKEN PESTO",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/chickenpesto.png",
+                    desc: "Pasta with basil pesto and chicken, offering a fresh and herby flavor."
+                },
+                {
+                    name: "TUNA PESTO",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/pesto.png",
+                    desc: "Pasta tossed in pesto sauce with chunks of tuna, light but flavorful."
+                },
+                {
+                    name: "SHRIMP PASTA ALA MIA",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/shrimppasta.png",
+                    desc: "House-style pasta with shrimp in a savory, well-balanced sauce."
+                },
+                {
+                    name: "BAKED MACARONI SMALL",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/bakedmac.png",
+                    desc: "Baked macaroni with meat sauce and melted cheese, served solo."
+                },
+                {
+                    name: "BAKED MACARONI DOUBLE",
+                    price1: "299",
+                    price2: "359",
+                    img: "menu/pasta/bm.png",
+                    desc: "Baked macaroni with meat sauce and cheese, good for sharing."
+                },
+                {
+                    name: "BAKED LASAGNA SMALL",
+                    price1: "169",
+                    price2: "229",
+                    img: "menu/pasta/lasagna.png",
+                    desc: "Layered pasta with meat sauce and cheese, baked and served solo."
+                },
+                {
+                    name: "BAKED LASAGNA DOUBLE",
+                    price1: "299",
+                    price2: "359",
+                    img: "menu/pasta/pasta11.png",
+                    desc: "Layered pasta with meat sauce and cheese, baked for sharing."
+                }
+                ]
+            },
+            "Burger": {
+                groups: [{
+                    label: "BEEF PATTY",
+                    items: [{
+                        name: "CHEESE BURGER",
+                        price1: "129",
+                        price2: "189",
+                        img: "menu/burger/cheeseburger.png",
+                        desc: "100% Beef patty, lettuce, cucumber, cheese, dressing, burger dressing inside the bun."
+                    },
+                    {
+                        name: "BACON CHEESE BURGER",
+                        price1: "149",
+                        price2: "209",
+                        img: "menu/burger/baconcheese.png",
+                        desc: "100% Beef patty, lettuce, cucumber, cheese, bacon, burger dressing inside the bun."
+                    },
+                    {
+                        name: "BACON & EGG BURGER",
+                        price1: "149",
+                        price2: "209",
+                        img: "menu/burger/baconegg.png",
+                        desc: "100% Beef patty, lettuce, bacon, egg, burger dressing inside the bun."
+                    },
+                    {
+                        name: "OVERLOAD BURGER",
+                        price1: "169",
+                        price2: "229",
+                        img: "menu/burger/overload.png",
+                        desc: "The ultimate 100% beef burger, lettuce, cucumber, cheese, bacon, egg, burger dressing inside the bun."
+                    }
+                    ]
+                },
+                {
+                    label: "REAL CHICKEN",
+                    items: [{
+                        name: "CHICKEN CHEESE BURGER",
+                        price1: "109",
+                        price2: "169",
+                        img: "menu/burger/chickencheese.png",
+                        desc: "Real chicken fillet, lettuce, cucumber, cheese, burger dressing inside the bun."
+                    },
+                    {
+                        name: "KOREAN BBQ BURGER",
+                        price1: "109",
+                        price2: "169",
+                        img: "menu/burger/bbq.png",
+                        desc: "Real chicken fillet coated with Korean BBQ sauce, lettuce, cucumber, burger dressing inside the bun."
+                    },
+                    {
+                        name: "HONEY SRIRACHA BURGER",
+                        price1: "109",
+                        price2: "169",
+                        img: "menu/burger/honey.png",
+                        desc: "Real chicken fillet coated with Honey sriracha sauce, lettuce, cucumber, burger dressing inside the bun."
+                    },
+                    {
+                        name: "CHICKEN TERIYAKI BURGER",
+                        price1: "109",
+                        price2: "169",
+                        img: "menu/burger/teriyaki.png",
+                        desc: "Real chicken fillet with savory teriyaki sauce, lettuce, cucumber, burger dressing inside the bun."
+                    }
+                    ]
+                }
+                ]
+            },
+            "Salad": {
+                groups: [
+
+                    {
+                        label: "FRESH SALAD",
+                        items: [{
+                            name: "Kani Salad",
+                            price1: "199",
+                            price2: null,
+                            img: "menu/salad/fs1.png",
+                            desc: "Lettuce, cucumber, carrots, mango, crabsticks, drizzled with roasted sesame salad dressing."
+                        },
+                        {
+                            name: "Chicken Salad",
+                            price1: "199",
+                            price2: null,
+                            img: "menu/salad/fs2.png",
+                            desc: "Lettuce, cucumber, carrots, mango, chicken breast, drizzled with roasted sesame salad dressing."
+                        },
+                        {
+                            name: "Caesar Salad",
+                            price1: "199",
+                            price2: null,
+                            img: "menu/salad/fs3.png",
+                            desc: "Lettuce, cucumber, carrots, mango, tomato, croutons, tosted bacon drizzled with roasted sesame salad dressing."
+                        }
+                        ]
+                    },
+
+                    {
+                        label: "SALAD ROLLS",
+                        items: [{
+                            name: "CRABSTICKS SALAD ROLL",
+                            price1: "109",
+                            price2: "209",
+                            price3: "309",
+                            img: "menu/salad/crab.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, kani & noodles."
+                        },
+                        {
+                            name: "CHICKEN SALAD ROLL",
+                            price1: "109",
+                            price2: "209",
+                            price3: "309",
+                            img: "menu/salad/chicken.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, chicken & noodles."
+                        },
+                        {
+                            name: "SHRIMP SALAD ROLL",
+                            price1: "109",
+                            price2: "209",
+                            price3: "309",
+                            img: "menu/salad/shrimp.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, fresh shrimps & noodles."
+                        },
+                        {
+                            name: "FISH SALAD ROLL",
+                            price1: "109",
+                            price2: "209",
+                            price3: "309",
+                            img: "menu/salad/fish.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, fish & noodles."
+                        },
+                        {
+                            name: "BEEF SALAD ROLL",
+                            price1: "109",
+                            price2: "209",
+                            price3: "309",
+                            img: "menu/salad/beef.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, beef & noodles."
+                        },
+                        {
+                            name: "ASSORTED SALAD ROLL",
+                            price1: "129",
+                            price2: "239",
+                            price3: "349",
+                            img: "menu/salad/assorted.png",
+                            desc: "Mixed of different salad rolls"
+                        },
+                        {
+                            name: "KANI & SHRIMP SALAD ROLL",
+                            price1: "129",
+                            price2: "239",
+                            price3: "349",
+                            img: "menu/salad/kanishrimp.png",
+                            desc: "Fresh lettuce, carrots, cucumber, mango, kani & shrimps, & noodles."
+                        }
+                        ]
+                    }
+
+                ]
+            },
+            "Sushi": {
+                groups: [{
+                    label: "BAKED SUSHI",
+                    items: [{
+                        name: "CALIFORNIA ",
+                        price1: "169",
+                        price2: "299",
+                        img: "menu/sushi/bs1.png",
+                        desc: "Furikake rice, crabsticks mixture, cucumber, mango, cheese drizzled with Japaneses mayo."
+                    },
+                    {
+                        name: "BACON & HAM ",
+                        price1: "169",
+                        price2: "299",
+                        img: "menu/sushi/bs3.png",
+                        desc: "Furikake rice, bacon, ham, egg & cheese drizzled with Japanese mayo."
+                    },
+                    {
+                        name: "GARLIC SHRIMP ",
+                        price1: "169",
+                        price2: "299",
+                        img: "menu/sushi/bs2.png",
+                        desc: "Furikake rice, garlic, fresh shrimp & cheese drizzled with Japanese mayo."
+                    }
+                    ]
+                },
+                {
+                    label: "SUSHI ROLLS",
+                    items: [{
+                        name: "CALIFORNIA SUSHI ROLLS",
+                        price1: "159",
+                        price2: null,
+                        img: "menu/sushi/california.png",
+                        desc: "8pcs. Japanese rice, crabsticks, cucumber, mango, carrot wrapped in nori sheet."
+                    },
+                    {
+                        name: "SPAM TAMAGO SUSHI ROLLS",
+                        price1: "159",
+                        price2: null,
+                        img: "menu/sushi/spamtamago.png",
+                        desc: "8pcs. Japanese rice, spam, egg, carrot, cucumber wrapped in nori sheet."
+                    },
+                    {
+                        name: "SPICY BEEF SUSHI ROLLS",
+                        price1: "159",
+                        price2: null,
+                        img: "menu/sushi/spicybeef.png",
+                        desc: "8pcs. Japanese rice, beef, carrot, cucumber, sriracha sauce wrapped in nori sheet."
+                    }
+                    ]
+                }
+                ]
+            },
+            "Waffles": {
+                products: [{
+                    name: "SINGLE FLAVOR WAFFLE",
+                    price1: "59",
+                    img: "menu/waffles/waffle1.png",
+                    desc: "Single flavor classic waffles made with love.",
+                    flavors: [{
+                        name: "Chocolate",
+                        price: "59"
+                    },
+                    {
+                        name: "Cheese",
+                        price: "59"
+                    },
+                    {
+                        name: "Blueberry",
+                        price: "69"
+                    },
+                    {
+                        name: "Strawberry",
+                        price: "69"
+                    },
+                    {
+                        name: "Nutella",
+                        price: "69"
+                    }
+                    ]
+                },
+                {
+                    name: "PERFECT COMBO WAFFLE",
+                    price1: "69",
+                    img: "menu/waffles/waffle2.png",
+                    desc: "2 combination flavors.",
+                    flavors: [{
+                        name: "Chocolate Banana",
+                        price: "69"
+                    },
+                    {
+                        name: "Chocolate Oreo",
+                        price: "69"
+                    },
+                    {
+                        name: "Banana Blueberry",
+                        price: "79"
+                    },
+                    {
+                        name: "Banana Strawberry",
+                        price: "79"
+                    },
+                    {
+                        name: "Nutella Banana",
+                        price: "89"
+                    },
+                    {
+                        name: "Biscoff Crunch",
+                        price: "89"
+                    }
+                    ]
+                },
+                {
+                    name: "SAVORY FLAVOR WAFFLE",
+                    price1: "69",
+                    img: "menu/waffles/waffle3.png",
+                    desc: "Savory flavor waffle.",
+                    flavors: [{
+                        name: "Hotdog & Cheese",
+                        price: "89"
+                    },
+                    {
+                        name: "Ham & Cheese",
+                        price: "89"
+                    },
+                    {
+                        name: "Bacon & Cheese",
+                        price: "69"
+                    }
+                    ]
+                }
+                ]
+            },
+            "Noodles and Soup": {
+                products: [{
+                    name: "BIHON/CANTON SMALL",
+                    price1: "79",
+                    price2: null,
+                    img: "menu/noodles/bihon.png",
+                    desc: "Single serving of classic noodles."
+                },
+                {
+                    name: "BIHON/CANTON LARGE",
+                    price1: "139",
+                    price2: null,
+                    img: "menu/noodles/pancit.png",
+                    desc: "Good for 2-3 pax."
+                },
+                {
+                    name: "CRAB & CORN SOUP",
+                    price1: "159",
+                    price2: null,
+                    img: "menu/noodles/soup.png",
+                    desc: "Warm soup with crab and corn with mixed egg for sharing."
+                }
+                ]
+            },
+            "Drinks": {
+                isDrinksTable: true,
+                sections: [{
+                    label: "COFFEE (HOT/ICED)",
+                    img: "menu/drinks/coffee.png",
+                    items: [{
+                        name: "Black Americano",
+                        p1: "79",
+                        p2: "95",
+                        p3: "95"
+                    },
+                    {
+                        name: "Vanilla Latte",
+                        p1: "99",
+                        p2: "119",
+                        p3: "139"
+                    },
+                    {
+                        name: "Caramel Macchiato",
+                        p1: "110",
+                        p2: "120",
+                        p3: "120"
+                    },
+                    {
+                        name: "Mocha",
+                        p1: "99",
+                        p2: "119",
+                        p3: "139"
+                    },
+                    {
+                        name: "Hazelnut Latte",
+                        p1: "99",
+                        p2: "119",
+                        p3: "139"
+                    },
+                    {
+                        name: "Salted Caramel",
+                        p1: "99",
+                        p2: "119",
+                        p3: "139"
+                    },
+                    {
+                        name: "Spanish Latte",
+                        p1: "99",
+                        p2: "119",
+                        p3: "139"
+                    },
+                    ]
+                },
+                {
+                    label: "MILKSHAKE",
+                    img: "menu/drinks/milkshake.png",
+                    items: [{
+                        name: "Fresh Mango",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Blueberry",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Strawberry",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Taro Seasalt",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Oreo & Cream",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Chocolate",
+                        p1: "129",
+                        p2: "149"
+                    },
+                    {
+                        name: "Chocochip Cookie",
+                        p1: "149",
+                        p2: "169"
+                    },
+                    {
+                        name: "Biscoff Crunch",
+                        p1: "149",
+                        p2: "169"
+                    },
+                    {
+                        name: "Cofee Hazelnut",
+                        p1: "149",
+                        p2: "169"
+                    },
+                    {
+                        name: "Cofee Caramel",
+                        p1: "149",
+                        p2: "169"
+                    },
+                    {
+                        name: "Dark Mocha",
+                        p1: "149",
+                        p2: "169"
+                    },
+                    {
+                        name: "Java Chip Latte",
+                        p1: "149",
+                        p2: "169"
+                    }
+                    ]
+                },
+                {
+                    label: "FRUIT TEA (with nata)",
+                    img: "menu/drinks/fruittea.png",
+                    items: [{
+                        name: "Lemon Fruit Tea",
+                        p1: "49"
+                    },
+                    {
+                        name: "Mango Fruit Tea",
+                        p1: "49"
+                    },
+                    {
+                        name: "Lychee Fruit Tea",
+                        p1: "49"
+                    },
+                    {
+                        name: "Blueberry Fruit Tea",
+                        p1: "49"
+                    },
+                    {
+                        name: "Green Apple Fruit Tea",
+                        p1: "49"
+                    },
+                    {
+                        name: "Mixed Berries Fruit Tea",
+                        p1: "49"
+                    }
+                    ]
+                },
+                {
+                    label: "FRUIT YOGURT (with nata)",
+                    img: "menu/drinks/fruityogurt.png",
+                    items: [{
+                        name: "Lemon Fruit Tea",
+                        p1: "59"
+                    },
+                    {
+                        name: "Mango Fruit Tea",
+                        p1: "59"
+                    },
+                    {
+                        name: "Lychee Fruit Tea",
+                        p1: "59"
+                    },
+                    {
+                        name: "Blueberry Fruit Tea",
+                        p1: "59"
+                    },
+                    {
+                        name: "Green Apple Fruit Tea",
+                        p1: "59"
+                    },
+                    {
+                        name: "Mixed Berries Fruit Tea",
+                        p1: "59"
+                    }
+                    ]
+                },
+                {
+                    label: "FRUIT SODA (with nata)",
+                    img: "menu/drinks/fruitsoda.png",
+                    items: [{
+                        name: "Lemon Fruit Soda",
+                        p1: "79"
+                    },
+                    {
+                        name: "Mango Fruit Soda",
+                        p1: "79"
+                    },
+                    {
+                        name: "Lychee Fruit Soda",
+                        p1: "79"
+                    },
+                    {
+                        name: "Strawberry Fruit Soda",
+                        p1: "79"
+                    },
+                    {
+                        name: "Green Apple Fruit Soda",
+                        p1: "79"
+                    },
+                    ]
+                },
+
+                {
+                    label: "LEMON SERIES",
+                    img: "menu/drinks/lemon.png",
+                    items: [{
+                        name: "Fresh Lemonade",
+                        p1: "79"
+                    },
+                    {
+                        name: "Fresh Lemon Mango",
+                        p1: "89"
+                    },
+                    {
+                        name: "Fresh Lemon Yakult",
+                        p1: "89"
+                    },
+                    {
+                        name: "Fresh Lemon Strawberry",
+                        p1: "89"
+                    },
+                    {
+                        name: "Fresh Lemon Blueberry",
+                        p1: "89"
+                    },
+                    {
+                        name: "Fresh Lemon Lychee",
+                        p1: "89"
+                    }
+                    ]
+                },
+                {
+                    label: "MILK TEA (with pearls)",
+                    img: "menu/drinks/milktea.png",
+                    items: [{
+                        name: "Taro",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Matcha",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Chocolate",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Caramel",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Okinawa",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Wintermelon",
+                        p1: "69",
+                        p2: "89"
+                    },
+                    {
+                        name: "Cookies and Cream",
+                        p1: "69",
+                        p2: "89"
+                    }
+                    ]
+                }
+                ]
+            },
+            "Party Sizes": {
+                isTable: true
+            }
+        };
+
+        const partySizeRows = [{
+            name: "SALAD ROLLS (ANY FLAVOR)",
+            p1: "430 (16 PCS)",
+            p2: "640 (24 PCS)",
+            p3: "850 (32 PCS)",
+            p4: "1070 (40 PCS)"
+        },
+        {
+            name: "BAKED SUSHI (ANY FLAVOR)",
+            p1: "500",
+            p2: "750",
+            p3: "1000",
+            p4: "1250"
+        },
+        {
+            name: "SUSHI ROLLS (ANY FLAVOR)",
+            p1: "300 (16 PCS)",
+            p2: "450 (24 PCS)",
+            p3: "600 (32 PCS)",
+            p4: "750 (40 PCS)"
+        },
+        {
+            name: "PASTA OF YOUR CHOICE",
+            p1: "500",
+            p2: "750",
+            p3: "1000",
+            p4: "1250"
+        },
+        {
+            name: "PANCIT (BIHON/CANTON/MIX)",
+            p1: "280",
+            p2: "420",
+            p3: "560",
+            p4: "700"
+        },
+        {
+            name: "CHICKEN WINGS",
+            p1: "300 (8 PCS)",
+            p2: "450 (12 PCS)",
+            p3: "600 (16 PCS)",
+            p4: "750 (20 PCS)"
+        },
+        {
+            name: "BREADED CHICKEN / FISH / PORK",
+            p1: "300",
+            p2: "450",
+            p3: "600",
+            p4: "750"
+        },
+        {
+            name: "LUMPIANG SHANGHAI",
+            p1: "270 (15 PCS)",
+            p2: "360 (20 PCS)",
+            p3: "450 (25 PCS)",
+            p4: "540 (30 PCS)"
+        },
+        {
+            name: "CHICKEN CORDON BLEU",
+            p1: "320 (12 PCS)",
+            p2: "480 (18 PCS)",
+            p3: "640 (24 PCS)",
+            p4: "800 (30 PCS)"
+        },
+        {
+            name: "CHOPSEUY",
+            p1: "320",
+            p2: "480",
+            p3: "640",
+            p4: "800"
+        },
+        {
+            name: "SWEET N SOUR (FISH/CHICKEN/PORK)",
+            p1: "400",
+            p2: "600",
+            p3: "800",
+            p4: "1000"
+        },
+        {
+            name: "PORK CALDERETA",
+            p1: "560",
+            p2: "840",
+            p3: "1120",
+            p4: "1400"
+        },
+        {
+            name: "BUTTERED SHRIMP",
+            p1: "560",
+            p2: "840",
+            p3: "1120",
+            p4: "1400"
+        },
+        {
+            name: "YANG CHOW RICE",
+            p1: "280",
+            p2: "420",
+            p3: "560",
+            p4: "700"
+        },
+        {
+            name: "SISIG (PORK/CHICKEN/TOFU)",
+            p1: "350",
+            p2: "520",
+            p3: "700",
+            p4: "870"
+        }
+        ];
+
+        function renderAccordion() {
+            return `
+        <div class="accordion mb-5 shadow-sm" id="addonAccordion" style="border-radius: 1.5rem; overflow: hidden; border: 2px solid #4e6b31;">
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button fw-bold text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddons" style="background-color: #4e6b31;">
+                        + VIEW ADD-ONS FOR RICE MEALS
+                    </button>
+                </h2>
+                <div id="collapseAddons" class="accordion-collapse collapse" data-bs-parent="#addonAccordion">
+                    <div class="accordion-body" style="background-color: #f8f9f2;">
+                        <div class="row text-center g-3">
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>White Rice</b><br>₱ 25</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Fried Egg</b><br>₱ 25</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Gravy Sauce</b><br>₱ 25</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Garlic Mayo</b><br>₱ 25</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>1pc Lumpiang Toge</b><br>₱ 25</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Peanut Sauce</b><br>₱ 30</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Nori Pack</b><br>₱ 40</div></div>
+                            <div class="col-6 col-md-3"><div class="p-2 border rounded bg-white"><b>Regular Fries</b><br>₱ 40</div></div>
+                            <div class="col-12 mt-2"><div class="p-2 border rounded bg-white"><b>Large Flavored Fries</b> (Cheese, BBQ, Sour & Cream, Salt & Pepper)<br>₱ 80</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        }
+
+        function renderDrinksTables(sections) {
+            let htmlContent = '';
+
+            sections.forEach(section => {
+                const isCoffee = section.label.toUpperCase().includes("COFFEE");
+                const isTwoSize = section.label.toUpperCase().includes("MILKSHAKE") || section.label.toUpperCase().includes("MILK TEA");
+
+                htmlContent += `
+            <div class="col-12 mb-5">
+                <div class="row mb-3 mt-2">
+                    <div class="col-12 d-flex align-items-center">
+                        <h4 class="font-cinzel fw-bold mb-0 me-3" style="color: var(--brand-green); text-transform: uppercase; letter-spacing: 1px;">${section.label}</h4>
+                        <div style="flex-grow: 1; height: 2px; background-color: var(--brand-green); opacity: 0.3;"></div>
+                    </div>
+                </div>
+
+                <div class="row g-4 align-items-stretch">
+                    
+                    <div class="col-md-3 text-center d-flex">
+                        <div style="background-color: #4e6b31; border-radius: 1.5rem; padding: 15px; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center;">
+                            <img src="${section.img}" style="width: 100%; max-height: 250px; border-radius: 1rem; object-fit: contain;">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="table-responsive" style="border-radius: 20px; border: 2.5px solid #4e6b31; overflow: hidden; background-color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <table class="table party-table table-bordered align-middle text-center mb-0" style="border: none !important;">
+                                <thead style="background-color: #4e6b31 !important; color: white !important;">
+                                    ${isCoffee ? `
+                                        <tr>
+                                            <th rowspan="2" class="align-middle text-start ps-3" style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 10px;">DRINK NAME</th>
+                                            <th rowspan="2" class="align-middle" style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 10px;">HOT</th>
+                                            <th colspan="2" style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 5px;">COLD</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; font-size: 0.8rem; padding: 5px;">12oz</th>
+                                            <th style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; font-size: 0.8rem; padding: 5px;">16oz</th>
+                                        </tr>
+                                    ` : isTwoSize ? `
+                                        <tr>
+                                            <th class="text-start ps-3" style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px;">DRINK NAME</th>
+                                            <th style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px;">16oz</th>
+                                            <th style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px;">22oz</th>
+                                        </tr>
+                                    ` : `
+                                        <tr>
+                                            <th class="text-start ps-3" style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px;">DRINK NAME</th>
+                                            <th style="border: 1px solid rgba(255,255,255,0.2) !important; color: white !important; padding: 12px;">PRICE</th>
+                                        </tr>
+                                    `}
+                                </thead>
+                                <tbody>`;
+
+                section.items.forEach(item => {
+                    htmlContent += `
+                <tr style="border-bottom: 1px solid rgba(45, 90, 39, 0.1) !important;">
+                    <td class="text-start ps-3 py-1 fw-bold" style="color: #4e6b31; border-right: 1px solid rgba(45, 90, 39, 0.1) !important; font-size: 0.85rem; height: 35px;">${item.name}</td>`;
+
+                    if (isCoffee) {
+                        htmlContent += `
+                    <td style="border-right: 1px solid rgba(45, 90, 39, 0.1) !important; font-weight: 700; padding: 5px;">₱${item.p1 || '-'}</td>
+                    <td style="border-right: 1px solid rgba(45, 90, 39, 0.1) !important; font-weight: 700; padding: 5px;">₱${item.p2 || '-'}</td>
+                    <td style="font-weight: 700; padding: 5px;">₱${item.p3 || '-'}</td>`;
+                    } else if (isTwoSize) {
+                        htmlContent += `
+                    <td style="border-right: 1px solid rgba(45, 90, 39, 0.1) !important; font-weight: 700; padding: 5px;">₱${item.p1 || '-'}</td>
+                    <td style="font-weight: 700; padding: 5px;">₱${item.p2 || '-'}</td>`;
+                    } else {
+                        htmlContent += `<td style="font-weight: 700; padding: 5px;">₱${item.p1 || '-'}</td>`;
+                    }
+                    htmlContent += `</tr>`;
+                });
+
+                htmlContent += `</tbody></table></div></div></div></div>`;
+            });
+
+            return htmlContent;
+        }
+
+        function renderPartySizeTable() {
+            return `<div class="table-responsive shadow-lg mt-4" style="border-radius: 2rem; overflow: hidden; border: 3px solid #4e6b31; background: white;">
+            <table class="table party-table mb-0">
+                <thead><tr class="text-center align-middle"><th class="text-start ps-4">Platter Size</th><th>4-6 Pax</th><th>6-8 Pax</th><th>8-10 Pax</th><th>10-12 Pax</th></tr></thead>
+                <tbody>${partySizeRows.map(row => `<tr class="align-middle text-center"><td class="text-start ps-4 fw-bold" style="color: #4e6b31; background-color: rgba(78, 107, 49, 0.02);">${row.name}</td><td class="price-text">₱ ${row.p1}</td><td class="price-text">₱ ${row.p2}</td><td class="price-text">₱ ${row.p3}</td><td class="price-text">₱ ${row.p4}</td></tr>`).join('')}</tbody>
+            </table>
+        </div>`;
+        }
+
+        function createCardHTML(item, category) {
+            // Custom price display for waffles
+            let priceLabel = `₱ ${item.price1}`;
+            if (category === "Waffles") {
+                priceLabel = `starts at ₱ ${item.price1}`;
+            }
+
+            return `
+        <div class="col" style="cursor: pointer;" onclick="openDetailModal('${item.name}', '${category}', '${item.price1}', '${item.price2 || ''}', '${item.img}', '${item.desc}')">
+            <div style="background-color: #4e6b31; border-radius: 1.5rem; padding: 15px; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="${item.img}" class="img-fluid" style="height: 100%; width: auto; object-fit: contain;">
+            </div>
+            <div class="px-2 pb-2 pt-3 text-start">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="font-cinzel fw-bold mb-0" style="color: var(--brand-green); font-size: 1.1rem; text-transform: uppercase;">${item.name}</h5>
+                    <div class="d-flex gap-2 align-items-center">
+                        <span class="price-badge-green">${priceLabel}</span>
+                        ${item.price2 ? `<span class="price-badge-gray">₱ ${item.price2}</span>` : ''}
+                    </div>
+                </div>
+                <p class="text-muted small mb-0">${item.desc}</p>
+            </div>
+        </div>`;
+        }
+
+        function renderProducts(category) {
+            const container = document.getElementById('menu-display-container');
+            const data = menuData[category];
+            if (!data) return;
+
+            let htmlContent = `<div class="text-center mb-5"><img src="${titleIcon}" style="width: 80px; height: 80px; object-fit: contain;" class="mb-2"><h2 class="font-cinzel fw-bold" style="color: #2e6417; letter-spacing: 2px;">${category.toUpperCase()}</h2></div>`;
+
+            if (data.hasAccordion) htmlContent += renderAccordion();
+
+            if (data.isTable) {
+                htmlContent += renderPartySizeTable();
+            } else if (data.isDrinksTable) {
+                htmlContent += renderDrinksTables(data.sections);
+            } else if (data.groups) {
+                data.groups.forEach(group => {
+                    htmlContent += `<div class="row mb-4 mt-4"><div class="col-12 d-flex align-items-center"><h4 class="font-cinzel fw-bold mb-0 me-3" style="color: var(--brand-green);">${group.label}</h4><div style="flex-grow: 1; height: 2px; background-color: var(--brand-green); opacity: 0.3;"></div></div></div><div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mb-5">`;
+                    group.items.forEach(item => {
+                        htmlContent += createCardHTML(item, category);
+                    });
+                    htmlContent += `</div>`;
+                });
+            } else if (data.products) {
+                htmlContent += `<div class="row mb-4"><div class="col-12"><div style="width: 100%; height: 2px; background-color: var(--brand-green); opacity: 0.3;"></div></div></div><div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">`;
+                data.products.forEach(item => {
+                    htmlContent += createCardHTML(item, category);
+                });
+                htmlContent += `</div>`;
+            }
+            container.innerHTML = htmlContent;
+        }
+
+
+
+        function openDetailModal(title, cat, p1, p2, img, desc, p3) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-cat-label').innerText = cat;
+            document.getElementById('modal-img').src = img;
+            document.getElementById('modal-desc').innerText = desc;
+
+            const flavorSection = document.getElementById('flavor-section');
+            const flavorBox = document.getElementById('flavor-list');
+            const priceContainer = document.getElementById('price-container');
+
+            // Find the item in data
+            let selectedItem = null;
+            if (menuData[cat].products) {
+                selectedItem = menuData[cat].products.find(p => p.name === title);
+            } else if (menuData[cat].groups) {
+                menuData[cat].groups.forEach(g => {
+                    const found = g.items.find(p => p.name === title);
+                    if (found) selectedItem = found;
+                });
+            }
+
+            // Render Flavors
+            if (selectedItem && selectedItem.flavors) {
+                flavorSection.style.display = "block";
+                flavorBox.innerHTML = selectedItem.flavors.map(f => {
+                    const isObj = typeof f === 'object';
+                    const fName = isObj ? f.name : f;
+                    const fPrice = isObj ? `₱${f.price}` : '';
+
+                    return `
+                <div class="col-6 mb-2 border-bottom pb-1">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><img src="${heroIcon}" class="flavor-bullet" style="width:15px; margin-right:8px;">${fName}</span>
+                        <span class="fw-bold" style="color: var(--brand-green);">${fPrice}</span>
+                    </div>
+                </div>`;
+                }).join('');
+            } else {
+                flavorSection.style.display = "none";
+            }
+
+            priceContainer.innerHTML = '';
+            const titleUpper = title.toUpperCase();
+
+            if (cat === "Waffles") {
+                priceContainer.innerHTML = `<button class="btn px-4 py-2 fw-bold text-white shadow-sm" style="background-color: var(--brand-green); border-radius: 50px; cursor: default;">Price varies on flavors</button>`;
+            } else if (titleUpper.includes("SALAD ROLL")) {
+                priceContainer.innerHTML += `<button class="btn px-4 py-2 fw-bold text-white shadow" style="background-color: var(--brand-green); border-radius: 50px;">4 PCS : ${p1}</button>`;
+                if (p2 && p2 !== "null") priceContainer.innerHTML += `<button class="btn px-4 py-2 fw-bold text-white shadow" style="background-color: var(--brand-green); border-radius: 50px;">8 PCS : ${p2}</button>`;
+                if (p3 && p3 !== "undefined") priceContainer.innerHTML += `<button class="btn px-4 py-2 fw-bold text-white shadow" style="background-color: var(--brand-green); border-radius: 50px;">12 PCS : ${p3}</button>`;
+            } else {
+                let label1 = "ALA CARTE";
+                if (titleUpper.includes("SUSHI BAKED")) label1 = "SOLO";
+                if (titleUpper.includes("SUSHI ROLLS")) label1 = "8 PCS";
+
+                priceContainer.innerHTML += `<button class="btn px-4 py-2 fw-bold text-white shadow" style="background-color: var(--brand-green); border-radius: 50px;">${label1} : ${p1}</button>`;
+
+                if (p2 && p2 !== "null" && p2 !== "undefined" && p2 !== "") {
+                    const label2 = (cat === "Pasta" || cat === "Salad" || titleUpper.includes("SUSHI BAKED")) ? "DOUBLE" : "COMBO";
+                    priceContainer.innerHTML += `<button class="btn px-4 py-2 fw-bold text-white shadow" style="background-color: var(--brand-green); border-radius: 50px;">${label2} : ${p2}</button>`;
+                }
+            }
+
+            new bootstrap.Modal(document.getElementById('productDetailModal')).show();
+        }
+
+        function setActive(element) {
+            document.querySelectorAll('.category-item').forEach(el => el.classList.remove('category-active'));
+            element.classList.add('category-active');
+        }
+
+        document.querySelectorAll('.category-item').forEach(item => {
+            item.addEventListener('click', function () {
+                renderProducts(this.getAttribute('data-category'));
+                setActive(this);
+            });
+        });
+
+        document.getElementById('viewMoreBtn').addEventListener('click', function () {
+            renderProducts("Best Sellers");
+
+            const bestSellerIcon = document.querySelector('[data-category="Best Sellers"]');
+            setActive(bestSellerIcon);
+
+            const categoryCarousel = new bootstrap.Carousel(document.getElementById('categoryCarousel'));
+            categoryCarousel.to(0);
+
+            setTimeout(function () {
+                document.getElementById('menu-display-container').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

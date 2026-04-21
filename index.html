@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House of Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary-green: #2e6417; 
+      --bg-cream: #e2e5d6; 
+      --loading-bg: #0d0d0d; 
+    }
+
+    body, html {
+      width: 100%; height: 100%;
+      margin: 0; padding: 0;
+      overflow: hidden;
+      background-color: var(--bg-cream);
+    }
+
+    .splash-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-graphic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+      display: block;
+    }
+
+    
+    .btn-wrap {
+      position: absolute;
+      bottom: 43%; 
+      right: 32%; 
+    }
+
+    .btn-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      background: var(--primary-green);
+      padding: 10px 22px;
+      border-radius: 50px;
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      border: 2px solid #fff;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-pill:hover { transform: scale(1.05); }
+    .btn-hat { width: 24px; height: auto; }
+
+    #loading-screen {
+      position: fixed; 
+      inset: 0; 
+      background: var(--loading-bg); 
+      z-index: 9998; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      opacity: 0; 
+      pointer-events: none; 
+      transition: opacity 0.5s ease;
+    }
+    
+    #loading-screen.active { opacity: 1; pointer-events: all; }
+    
+    #loading-logo { 
+      width: 300px; 
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: all 0.8s ease 0.3s; 
+    }
+    #loading-screen.active #loading-logo { opacity: 1; transform: translateY(0); }
+
+    .flying-hat {
+      position: fixed; 
+      z-index: 9999;
+      width: 24px; 
+      pointer-events: none;
+      transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .btn-wrap {
+      position: absolute;
+      bottom: 10%; 
+      right: 30%;  
+      z-index: 10;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="splash-wrapper">
+    <img src="menu/splash.png" class="main-graphic" alt="House of Us">
+
+    <div class="btn-wrap">
+      <a href="home.html" class="btn-pill" id="reservation-btn">
+        <span>ENTER</span>
+        <img src="menu/hat.png" alt="Hat" class="btn-hat" id="btn-hat">
+      </a>
+    </div>
+  </div>
+
+  <div id="loading-screen">
+    <img src="menu/logaur.webp" alt="Logo" id="loading-logo">
+  </div>
+
+  <script>
+    document.getElementById('reservation-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetUrl = this.href;
+      const btnHat = document.getElementById('btn-hat');
+      const loadScreen = document.getElementById('loading-screen');
+      const loadLogo = document.getElementById('loading-logo');
+
+      const hatRect = btnHat.getBoundingClientRect();
+      loadScreen.classList.add('active');
+
+      const flyer = document.createElement('img');
+      flyer.src = btnHat.src;
+      flyer.className = 'flying-hat';
+      flyer.style.left = hatRect.left + 'px';
+      flyer.style.top = hatRect.top + 'px';
+      document.body.appendChild(flyer);
+
+      btnHat.style.opacity = '0';
+
+      setTimeout(() => {
+        const logoRect = loadLogo.getBoundingClientRect();
+        const targetX = logoRect.left + (logoRect.width / 2) - 12;
+        const targetY = logoRect.top + (logoRect.height / 2) - 12;
+
+        flyer.style.left = targetX + 'px';
+        flyer.style.top = targetY + 'px';
+        flyer.style.transform = 'scale(2) rotate(360deg)';
+        
+        setTimeout(() => { flyer.style.opacity = '0'; }, 800);
+      }, 50);
+
+      setTimeout(() => { window.location.href = targetUrl; }, 2800);
+    });
+  </script>
+</body>
+</html>

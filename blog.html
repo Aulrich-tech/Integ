@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+</head>
+
+<style>
+    :root {
+        --darkgreen: #2e6417;
+        --badge: #d1ebd3;
+        --card: #faf7f2;
+        --mint: #ecf7ed;
+        --lightgreen: #f1f9f1;
+        --green: #437631;
+        --serif: 'Cinzel', serif;
+        --sans: 'Montserrat', sans-serif;
+        --primary-green: #2e5c1d;
+        --accent-gold: #c9a961;
+        --bg-cream: #e6e8d5;
+        --dark-green: #4a5d2f;
+    }
+
+    .logo-section {
+        border-bottom: 8px solid var(--primary-green);
+        margin-bottom: -50px;
+    }
+
+    .green-banner {
+        background-color: var(--primary-green);
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        line-height: 1.6;
+    }
+
+    .navbar-custom .nav-link {
+        color: var(--primary-green);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0px;
+        padding: 10px 15px !important;
+        transition: all 0.3s ease;
+        margin-right: 50px;
+    }
+
+    .navbar-custom .nav-link:hover {
+        color: var(--accent-gold);
+    }
+
+    .navbar-custom .nav-link.active {
+        background-color: var(--primary-green);
+        color: white !important;
+        border-radius: 30px;
+        padding: 12px 28px !important;
+    }
+
+    .brand-title {
+        font-family: 'Georgia', serif;
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--primary-green);
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin-left: 50px;
+    }
+
+    .brand-subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: #333333;
+        letter-spacing: 1px;
+        margin-left: 50px;
+    }
+
+    #featuredSection img {
+        height: 420px;
+        object-fit: cover;
+    }
+
+    #articleSection img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    #articleModal #mImage {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .bf {
+        background-color: #fff;
+        color: var(--darkgreen);
+        border-color: var(--darkgreen);
+    }
+
+    .bf.active {
+        background-color: var(--darkgreen) !important;
+        color: #fff !important;
+    }
+
+    .banner {
+        background: linear-gradient(rgba(46, 100, 23, 0.8), rgba(46, 100, 23, 0.8)), url('images/DSCF8238.webp') no-repeat center center;
+        background-size: cover;
+    }
+
+    .star-rating-form i {
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: #ccc;
+        margin: 0 2px;
+        transition: color 0.15s;
+    }
+
+    .star-rating-form i.active {
+        color: #ffc107;
+    }
+
+    .tag-btn {
+        border: 1px solid var(--darkgreen);
+        background: transparent;
+        color: var(--darkgreen);
+        border-radius: 50px;
+        padding: 6px 18px;
+        font-size: 0.85rem;
+        transition: 0.2s;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .tag-btn.active {
+        background-color: var(--darkgreen) !important;
+        color: #fff !important;
+    }
+
+    .tag-btn:hover {
+        background-color: var(--badge);
+    }
+
+    .form-input-custom {
+        background-color: var(--lightgreen) !important;
+        border: 1px solid var(--darkgreen) !important;
+        border-radius: 8px !important;
+        padding: 10px 15px;
+    }
+
+    body {
+        font-family: var(--sans);
+        overflow-x: hidden;
+    }
+</style>
+
+<body>
+    <div class="logo-section bg-white text-center py-5 px-3">
+        <img src="images/logo.png" alt="House of Us Logo" class="img-fluid mb-3" style="max-width: 400px;">
+    </div>
+
+    <!-- ===== GREEN BANNER ===== -->
+    <div class="green-banner text-center py-3 px-4">
+        BRINGING PEOPLE TOGETHER OVER THE COMFORT FOOD YOU LOVE AND THE COZY ATMOSPHERE YOU DESERVE.
+    </div>
+
+    <!-- ===== NAVIGATION SECTION ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom bg-white border-bottom py-4 px-4">
+        <div class="container-fluid">
+            <div class="d-flex flex-column">
+                <span class="brand-title">HOUSE OF US</span>
+                <span class="brand-subtitle mt-2">A TASTE OF HOME</span>
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">MENU & SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">BLOG & REVIEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">SUPPORT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="text-white display-5 pt-4 pb-3 fw-bold" style="font-family: var(--serif);">Blog &
+                        Customer Reviews</h1>
+                    <p class="text-white mt-4 fs-6 fs-lg-5">Real stories, honest opinions, and heartwarming
+                        moments — all shared straight from the House of Us family. Each<br class="d-none d-lg-block">
+                        experience reflects genuine connections, meaningful memories, and the warmth of feeling
+                        truly at home together.</p>
+                </div>
+            </div>
+            <div class="row px-2 px-md-4 px-lg-5 justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="text-white fs-3 fs-lg-2 py-4 fw-bold" style="font-family: var(--serif);">
+                        Home >> Blog & Customer Reviews
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter py-3 border-bottom border-opacity-100" style="border-color: var(--darkgreen) !important;">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-md-8">
+                    <div class="hstack gap-2 gap-md-3 flex-wrap justify-content-center justify-content-md-start"
+                        id="filter-container">
+                        <button class="bf btn btn-sm active rounded-pill px-4 px-md-5" data-filter="all">All</button>
+                        <button class="bf btn btn-sm rounded-pill px-4" data-filter="article">Articles</button>
+                        <button class="bf btn btn-sm rounded-pill px-4" data-filter="5">5
+                            Stars</button>
+                        <button class="bf btn btn-sm rounded-pill px-4" data-filter="4">4
+                            Stars</button>
+                        <button class="bf btn btn-sm rounded-pill px-3" data-filter="3below">3 Stars
+                            &amp; Below</button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-md-end gap-2">
+                        <label class="small text-muted text-nowrap">Sort By:</label>
+                        <select id="sortSelect" class="form-select form-select-sm fw-bold">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="highest">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featuredSection" class="border-bottom border-opacity-100"
+        style="border-color: var(--darkgreen) !important;">
+        <div class="container py-5">
+            <div id="featuredInner">
+                <div class="row gy-2">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="rounded-pill px-4 py-2 text-start"
+                            style="background: var(--badge); color:var(--darkgreen)">Featured Article</span>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="fw-bold text-center text-md-end mb-0" style="color: var(--darkgreen);">April 5, 2026
+                        </p>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-12">
+                        <img src="images/art1.webp" class="w-100 img-fluid rounded-4" alt="">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-12 text-center text-md-start">
+                        <h1 class="fs-2 fs-lg-1 fw-bold" style="color: var(--green);">Why House of Us feels more like a
+                            friend's kitchen than a restaurant</h1>
+                        <p class="text-black fs-6 fs-lg-5">From handwritten menus to the smell of garlic bread fresh out
+                            of the
+                            oven, every detail at House of Us is designed to remind you of home. We sat down with
+                            founder Aling Rosa to find out the story behind the warmth and why this place keeps families
+                            coming back week after week...</p>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div
+                        class="col-12 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-warning text-white fw-bold d-flex align-items-center justify-content-center"
+                                style="width:50px;height:50px">AY</div>
+                        </div>
+                        <div>
+                            <p class="text-black mb-0 fw-bold">Aling Yhulo</p>
+                            <p class="text-black mb-0">Founder & Head Chef</p>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row gap-3 ms-md-auto align-items-center">
+                            <div class="border px-4 py-1"
+                                style="color: var(--green); border-radius: 5px; border-color: var(--darkgreen) !important;">
+                                5 min Read</div>
+                            <button class="btn px-4 text-white read-btn" style="background-color: var(--darkgreen);"
+                                data-title="Why House of Us feels more like a friend's kitchen than a restaurant"
+                                data-intro="From handwritten menus to the smell of garlic bread fresh out of the oven, every detail at House of Us is designed to remind you of home. We sat down with founder Aling Rosa to find out the story behind the warmth and why this place keeps families coming back week after week."
+                                data-body="<p class='mb-4'>The best meals are shared, messy, and loud. We wanted people to feel like they were eating at their lola's house.</p><p class='mb-4'>At House of Us, comfort is not just part of the menu. It is part of the experience. From handwritten menus to the smell of garlic bread fresh out of the oven, every detail is designed to remind guests of home.</p><p class='mb-4'>For Aling Rosa, the goal was never just to open a restaurant. It was to create a place where people could gather, slow down, and enjoy food that feels familiar and heartfelt.</p><p class='mb-0'>That warmth is what keeps families coming back week after week. More than the meals, it is the feeling of being welcomed, remembered, and cared for that makes House of Us special.</p>"
+                                data-author="Aling Yhulo" data-role="Founder & Head Chef" data-date="April 5, 2026"
+                                data-read="5 min Read" data-image="images/art1.webp" data-initials="AY"
+                                data-badge="Featured Article">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articleSection" class="border-bottom border-opacity-100"
+        style="border-color: var(--darkgreen) !important;">
+        <div class="container py-4">
+            <div class="mb-5">
+                <h1 class="pb-3 text-center text-md-start fw-bold"
+                    style="font-family: var(--serif); color: var(--green);">Recent Articles &amp; Posts</h1>
+                <div class="row g-3" id="articleGrid">
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card article-card h-100 w-100 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <img src="images/pasta.webp" alt="" class="img-fluid w-100">
+                            <div class="card-body pt-4 border rounded-bottom rounded-top"
+                                style="border-color: var(--darkgreen) !important;">
+                                <span class="rounded-pill px-3 py-1"
+                                    style="background: var(--badge); color:var(--darkgreen)">Behind the Menu</span>
+                                <p class="fs-6 px-3 pt-3 fw-bold">The secret behind our gourmet pasta recipe</p>
+                                <p class="px-3 text-muted small">March 28, 2026 · 3 min read</p>
+                                <div class="px-3 pb-2">
+                                    <button class="btn btn-sm px-4 text-white read-btn"
+                                        style="background-color: var(--darkgreen);"
+                                        data-title="The secret behind our gourmet pasta recipe"
+                                        data-intro="What makes our pasta so unforgettable? It starts long before it hits the plate. Our head chef shares the traditions, techniques, and a few surprising twists that go into every single bowl."
+                                        data-body="<p class='mb-4'>It begins with the flour. We source a locally milled semolina that gives our pasta its unmistakable bite and texture — something you can't replicate with store-bought.</p><p class='mb-4'>The sauce takes three hours to develop. Low heat, constant stirring, and a handful of herbs that Aling Rosa picked up from her grandmother's garden back in Bulacan. Every batch is made fresh each morning.</p><p class='mb-4'>Our team plates each order by hand, not by formula. That's why no two plates look exactly alike — and why regulars say it always tastes like it was made just for them.</p><p class='mb-0'>The secret, if there is one, is that there's no shortcut. Just good ingredients, real care, and a kitchen full of people who love what they do.</p>"
+                                        data-author="Chef Marlo" data-role="Head Pasta Chef" data-date="March 28, 2026"
+                                        data-read="3 min Read" data-image="images/pasta.webp" data-initials="CM"
+                                        data-badge="Behind the Menu">
+                                        Read More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card article-card h-100 w-100 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <img src="images/bday.webp" alt="" class="img-fluid w-100">
+                            <div class="card-body pt-4 border rounded-bottom rounded-top"
+                                style="border-color: var(--darkgreen) !important;">
+                                <span class="rounded-pill px-3 py-1"
+                                    style="background: var(--badge); color:var(--darkgreen)">Events</span>
+                                <p class="fs-6 px-3 pt-3 fw-bold">Celebrating unforgettable birthday at House of Us</p>
+                                <p class="px-3 text-muted small">March 15, 2026 · 5 min read</p>
+                                <div class="px-3 pb-2">
+                                    <button class="btn btn-sm px-4 text-white read-btn"
+                                        style="background-color: var(--darkgreen);"
+                                        data-title="Celebrating unforgettable birthdays at House of Us"
+                                        data-intro="Birthdays at House of Us are more than just meals — they are moments filled with laughter, warmth, and meaningful connections. From small family gatherings to lively celebrations, we make every birthday feel special and personal."
+                                        data-body="<p class='mb-4'>It often begins with a simple plan — a family wanting to celebrate a loved one’s special day. Whether it’s a quiet dinner for parents or a lively gathering with friends, each birthday is treated with care and attention.</p><p class='mb-4'>Our team prepares the space to match the occasion, from arranging tables for comfort to adding small touches that make the celebration feel more personal. Guests enjoy their favorite dishes while sharing stories, laughter, and memorable moments together.</p><p class='mb-4'>Some birthdays turn into beautiful surprises, with families coordinating decorations, cakes, and heartfelt gestures ahead of time. Seeing the joy on the celebrant’s face is what makes every effort worthwhile.</p><p class='mb-0'>At House of Us, every birthday is a chance to create lasting memories. If you’re planning a celebration, we’d love to help you make it truly special.</p>"
+                                        data-author="Ate Ganda" data-role="Events Coordinator"
+                                        data-date="March 15, 2026" data-read="5 min Read" data-image="images/bday.webp"
+                                        data-initials="AG" data-badge="Events">
+                                        Read More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card article-card h-100 w-100 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <img src="images/opn.webp" alt="" class="img-fluid w-100">
+                            <div class="card-body pt-4 border rounded-bottom rounded-top"
+                                style="border-color: var(--darkgreen) !important;">
+                                <span class="rounded-pill px-3 py-1"
+                                    style="background: var(--badge); color:var(--darkgreen)">Our Story</span>
+                                <p class="fs-6 px-3 pt-3 fw-bold">From 2013 to now — our journey of growth and
+                                    gratitude</p>
+                                <p class="px-3 text-muted small">Feb 14, 2026 · 6 min read</p>
+                                <div class="px-3 pb-2">
+                                    <button class="btn btn-sm px-4 text-white read-btn"
+                                        style="background-color: var(--darkgreen);"
+                                        data-title="From 2019 to now — our journey of growth and gratitude"
+                                        data-intro="Twelve years ago, House of Us was just a dream scribbled in a notebook. Today, it's a second home for hundreds of families in Valenzuela. Here's the story of how we got here."
+                                        data-body="<p class='mb-4'>In 2013, Aling Rosa opened the first House of Us with four tables, a borrowed stove, and a menu written in chalk. The first week was slow. The second week, a family came back. By the end of the month, there was a waiting line on weekends.</p><p class='mb-4'>The early years were defined by word of mouth. No ads, no social media — just neighbors telling neighbors that there was a place where the food tasted like something their own mothers used to make.</p><p class='mb-4'>In 2018, we expanded to a second location. In 2021, we launched delivery. In 2024, we renovated the main dining hall to host larger family gatherings and private events.</p><p class='mb-0'>Through every challenge and every milestone, what has never changed is the reason we started: to bring people together over food that feels like home. Thank you for being part of this journey with us.</p>"
+                                        data-author="Aling Rosa" data-role="Founder" data-date="Feb 14, 2026"
+                                        data-read="6 min Read" data-image="images/opn.webp" data-initials="AR"
+                                        data-badge="Our Story">
+                                        Read More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-bottom" id="high"
+        style="background-color: var(--mint); border-color: var(--darkgreen) !important;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="pt-4 pb-3 fw-bold text-uppercase" style="font-family: var(--sans); color:var(--green);">
+                        Highlighted Comment</h1>
+                    <p class="text-black fst-italic fw-semibold mt-4 fs-6 fs-lg-5">"Best comfort food in Caloocan. I've
+                        brought my whole family here three times already and every time feels special."</p>
+                </div>
+            </div>
+            <div class="row px-2 px-md-4 px-lg-5 justify-content-center">
+                <div
+                    class="col-12 d-flex flex-column flex-md-row gap-3 py-3 align-items-center justify-content-center text-center text-md-start">
+                    <div class="d-flex gap-3">
+                        <div class="rounded-circle bg-warning text-white fw-bold d-flex align-items-center justify-content-center"
+                            style="width:50px;height:50px">AY</div>
+                    </div>
+                    <div>
+                        <p class="text-black mb-0 fw-bold">Aling Yhulo</p>
+                        <p class="text-black mb-0 mt-0">Regular since 2023</p>
+                    </div>
+                    <div>
+                        <p class="text-warning mb-0 fw-bold fs-3 fs-lg-2 px-0 px-md-4">★★★★★</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviewSection" class="border-bottom">
+        <div class="container py-5">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 mb-4 text-center text-md-start">
+                <h1 class="pb-3 mb-0 fw-bold" style="font-family: var(--serif); color: var(--green);">Customer
+                    Testimonials</h1>
+                <div class="d-flex gap-2">
+                    <button id="toggleReviews" class="btn text-white px-4 fs-6"
+                        style="background-color: var(--darkgreen);">See All Reviews</button>
+                </div>
+            </div>
+            <div class="row g-5" id="reviewGrid"></div>
+        </div>
+    </section>
+
+    <section style="background-color: var(--mint); padding: 80px 0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase fw-bold" style="color: var(--darkgreen); letter-spacing: 2px;">Share Your
+                    Experience</h6>
+                <h1 class="fw-bold" style="color: var(--darkgreen); font-family: var(--serif);">Leave a Review</h1>
+                <p class="text-muted">Your feedback helps us serve you better and inspires our whole family.</p>
+            </div>
+
+            <div class="shadow-sm rounded-4 p-3 p-md-5 mx-auto"
+                style="background: #fff; border: 1.5px solid var(--darkgreen); max-width: 900px;">
+
+                <div class="text-center mb-4">
+                    <h6 class="fw-bold text-uppercase" style="color: var(--darkgreen); letter-spacing: 1px;">Your Rating
+                    </h6>
+                    <div class="star-rating-form mb-1" id="starPicker">
+                        <i class="bi bi-star-fill" data-val="1"></i>
+                        <i class="bi bi-star-fill" data-val="2"></i>
+                        <i class="bi bi-star-fill" data-val="3"></i>
+                        <i class="bi bi-star-fill" data-val="4"></i>
+                        <i class="bi bi-star-fill" data-val="5"></i>
+                    </div>
+                    <p class="small text-muted" id="starLabel">Tap to rate</p>
+                </div>
+
+                <form id="reviewForm">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 text-start">
+                            <label class="form-label fw-bold mb-2 small">Your name</label>
+                            <input type="text" id="fName" class="form-control form-input-custom shadow-none"
+                                placeholder="e.g. Rocky R." required>
+                        </div>
+                        <div class="col-md-6 text-start">
+                            <label class="form-label fw-bold mb-2 small">Dish you tried</label>
+                            <input type="text" id="fDish" class="form-control form-input-custom shadow-none"
+                                placeholder="e.g. Gourmet Pasta">
+                        </div>
+                    </div>
+
+                    <div class="mb-4 text-start">
+                        <label class="form-label fw-bold mb-2 small">Your review</label>
+                        <textarea id="fReview" class="form-control form-input-custom shadow-none" rows="5"
+                            placeholder="Tell us what you loved (or what we can improve)..." required></textarea>
+                    </div>
+
+                    <div class="mb-5 text-start">
+                        <label class="form-label fw-bold mb-3 small d-block">Tag your experience</label>
+                        <div class="d-flex flex-wrap gap-2" id="tagGroup">
+                            <button type="button" class="tag-btn active">Great Food</button>
+                            <button type="button" class="tag-btn">Cozy Vibes</button>
+                            <button type="button" class="tag-btn">Friendly Staff</button>
+                            <button type="button" class="tag-btn">Good Portions</button>
+                            <button type="button" class="tag-btn">Family-Friendly</button>
+                            <button type="button" class="tag-btn">Event Ready</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 border-top pt-4 text-center text-md-start">
+                        <p class="text-muted small mb-0">Reviews are verified before posting</p>
+                        <button type="submit" class="btn text-white fw-bold px-4 py-2 rounded-3"
+                            style="background-color: var(--green);">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="articleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow">
+                <div class="modal-body p-0">
+
+                    <img id="mImage" src="images/phold.png" class="w-100 img-fluid" alt="Article Image">
+
+                    <div class="p-4 p-md-5">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+                            <span class="rounded-pill px-4 py-2" id="mBadge"
+                                style="background: var(--badge); color: var(--darkgreen);">
+                                Featured Article
+                            </span>
+                            <p class="fw-bold mb-0" style="color: var(--darkgreen);" id="mDate">April 5, 2026</p>
+                        </div>
+
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-3">
+                            <h1 class="fw-bold mb-0 flex-grow-1" style="color: var(--green);" id="mTitle">
+                                Why House of Us feels more like a friend's kitchen than a restaurant
+                            </h1>
+                            <button type="button" class="btn-close mt-1" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <p class="text-dark fs-6 fs-md-5 mb-4" id="mIntro">
+                            From handwritten menus to the smell of garlic bread fresh out of the oven, every detail at
+                            House of Us is designed to remind you of home.
+                        </p>
+
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center flex-wrap gap-3 border-top border-bottom py-3 mb-4 text-center text-md-start">
+                            <div class="rounded-circle bg-warning text-white fw-bold d-flex align-items-center justify-content-center"
+                                style="width:50px;height:50px;" id="mInitials">
+                                AY
+                            </div>
+                            <div>
+                                <p class="text-black mb-0 fw-bold" id="mAuthor">Aling Yhulo</p>
+                                <p class="text-black mb-0" id="mRole">Founder & Head Chef</p>
+                            </div>
+                            <div class="ms-md-auto">
+                                <span class="border px-4 py-2 d-inline-block"
+                                    style="color: var(--green); border-radius: 5px; border-color: var(--darkgreen) !important;"
+                                    id="mReadTime">
+                                    5 min Read
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="text-dark lh-lg" id="mBody"></div>
+
+                        <div class="pt-4">
+                            <button type="button" class="btn px-4 text-white" data-bs-dismiss="modal"
+                                style="background-color: var(--darkgreen);">
+                                Close Article
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const App = {
+            reviews: [
+                {
+                    name: 'Aling Yhulo', stars: 5, date: '2026-04-02',
+                    text: 'The pasta tasted just like my lola\'s cooking. Staff were warm and welcoming, and the cozy vibe made us feel right at home every visit.',
+                    tags: ['Great Food', 'Family-Friendly', 'Cozy Vibes']
+                },
+
+                {
+                    name: 'Rocky R.', stars: 5, date: '2026-04-01',
+                    text: 'Warm atmosphere and friendly staff made the whole experience enjoyable. Food was satisfying and the place feels perfect for relaxing meals.',
+                    tags: ['Cozy Vibes', 'Friendly Staff', 'Great Food']
+                },
+
+                {
+                    name: 'Maria A.', stars: 4, date: '2026-03-28',
+                    text: 'Great food and generous portions made the visit worth it. The place gets busy at times, but the overall experience is still very pleasant.',
+                    tags: ['Good Portions', 'Great Food']
+                },
+
+                {
+                    name: 'Juan D.', stars: 3, date: '2026-03-20',
+                    text: 'Food was decent and the place looked nice. Service was a bit slow during peak hours, but the overall experience was still acceptable.',
+                    tags: ['Good Portions']
+                },
+
+                {
+                    name: 'Lina C.', stars: 5, date: '2026-03-15',
+                    text: 'Absolutely love the cozy environment and the comforting dishes. Every visit feels relaxing and welcoming, making it a place we always return to.',
+                    tags: ['Cozy Vibes', 'Great Food', 'Family-Friendly']
+                },
+
+                {
+                    name: 'Ben T.', stars: 4, date: '2026-03-10',
+                    text: 'Really enjoyed the pasta and serving sizes were just right. Prices are fair and the ambiance makes it a good spot for casual dining.',
+                    tags: ['Good Portions', 'Great Food']
+                },
+
+                {
+                    name: 'Carla M.', stars: 5, date: '2026-03-05',
+                    text: 'The staff were very accommodating and the food was consistently delicious. The warm atmosphere makes it perfect for family gatherings and dinners.',
+                    tags: ['Friendly Staff', 'Family-Friendly', 'Great Food']
+                },
+
+                {
+                    name: 'Derek P.', stars: 4, date: '2026-03-01',
+                    text: 'Nice place with a calm and cozy setup. Food was tasty and service was good overall, making it a great option for casual meetups.',
+                    tags: ['Cozy Vibes', 'Great Food']
+                }
+            ],
+
+            showAll: false,
+            activeFilter: 'all',
+            activeSort: 'newest',
+            chosenRating: 0,
+
+            init() {
+                this.renderReviews();
+                this.bindEvents();
+            },
+
+            bindEvents() {
+                document.getElementById('filter-container').addEventListener('click', e => {
+                    const btn = e.target.closest('[data-filter]');
+                    if (!btn) return;
+
+                    document.querySelectorAll('#filter-container [data-filter]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    this.activeFilter = btn.dataset.filter;
+                    this.showAll = false;
+                    document.getElementById('toggleReviews').textContent = 'See All Reviews';
+
+                    const featured = document.getElementById('featuredSection');
+                    const articles = document.getElementById('articleSection');
+                    const reviews = document.getElementById('reviewSection');
+                    const high = document.getElementById('high');
+
+                    if (this.activeFilter === 'all') {
+                        featured.style.display = '';
+                        articles.style.display = '';
+                        reviews.style.display = '';
+                        high.style.display = '';
+                    } else if (this.activeFilter === 'article') {
+                        featured.style.display = '';
+                        articles.style.display = '';
+                        reviews.style.display = 'none';
+                        high.style.display = 'none';
+                    } else {
+                        featured.style.display = 'none';
+                        articles.style.display = 'none';
+                        reviews.style.display = '';
+                        high.style.display = '';
+                    }
+
+                    this.renderReviews();
+                });
+
+                document.getElementById('sortSelect').addEventListener('change', e => {
+                    this.activeSort = e.target.value;
+                    this.renderReviews();
+                });
+
+                document.getElementById('toggleReviews').addEventListener('click', () => {
+                    this.showAll = !this.showAll;
+                    document.getElementById('toggleReviews').textContent = this.showAll ? 'Show Less' : 'See All Reviews';
+                    this.renderReviews();
+                });
+
+                document.querySelectorAll('#starPicker i').forEach(star => {
+                    star.addEventListener('click', () => {
+                        this.chosenRating = parseInt(star.dataset.val);
+                        this.updateStarUI(this.chosenRating);
+                        document.getElementById('starLabel').textContent =
+                            `Rated ${this.chosenRating} Star${this.chosenRating > 1 ? 's' : ''}`;
+                    });
+                    star.addEventListener('mouseenter', () => this.updateStarUI(parseInt(star.dataset.val)));
+                    star.addEventListener('mouseleave', () => this.updateStarUI(this.chosenRating));
+                });
+
+                document.getElementById('tagGroup').addEventListener('click', e => {
+                    if (e.target.classList.contains('tag-btn')) {
+                        e.target.classList.toggle('active');
+                    }
+                });
+
+                document.getElementById('reviewForm').addEventListener('submit', e => {
+                    e.preventDefault();
+                    if (this.chosenRating === 0) {
+                        alert('Please provide a star rating.');
+                        return;
+                    }
+
+                    const selectedTags = Array.from(document.querySelectorAll('#tagGroup .tag-btn.active'))
+                        .map(tag => tag.textContent.trim());
+
+                    const newReview = {
+                        name: document.getElementById('fName').value.trim(),
+                        stars: this.chosenRating,
+                        date: new Date().toISOString().split('T')[0],
+                        text: document.getElementById('fReview').value.trim(),
+                        tags: selectedTags
+                    };
+
+                    this.reviews.unshift(newReview);
+                    document.getElementById('reviewForm').reset();
+                    this.chosenRating = 0;
+                    this.updateStarUI(0);
+                    document.getElementById('starLabel').textContent = 'Tap to rate';
+                    document.querySelectorAll('.tag-btn').forEach((btn, i) => btn.classList.toggle('active', i === 0));
+
+                    this.activeFilter = 'all';
+                    this.activeSort = document.getElementById('sortSelect').value;
+                    document.querySelectorAll('#filter-container [data-filter]').forEach(b => {
+                        b.classList.toggle('active', b.dataset.filter === 'all');
+                    });
+                    document.getElementById('featuredSection').style.display = '';
+                    document.getElementById('articleSection').style.display = '';
+                    document.getElementById('reviewSection').style.display = '';
+                    document.getElementById('high').style.display = '';
+
+                    this.showAll = false;
+                    document.getElementById('toggleReviews').textContent = 'See All Reviews';
+                    this.renderReviews();
+
+                    alert('Review submitted successfully! Thank you.');
+                    document.getElementById('reviewSection').scrollIntoView({ behavior: 'smooth' });
+                });
+
+                document.addEventListener('click', e => {
+                    const btn = e.target.closest('.read-btn');
+                    if (!btn) return;
+
+                    document.getElementById('mTitle').textContent = btn.dataset.title || '';
+                    document.getElementById('mIntro').textContent = btn.dataset.intro || '';
+                    document.getElementById('mBody').innerHTML = btn.dataset.body || '';
+                    document.getElementById('mAuthor').textContent = btn.dataset.author || '';
+                    document.getElementById('mRole').textContent = btn.dataset.role || '';
+                    document.getElementById('mDate').textContent = btn.dataset.date || '';
+                    document.getElementById('mReadTime').textContent = btn.dataset.read || '';
+                    document.getElementById('mImage').src = btn.dataset.image || 'images/phold.png';
+                    document.getElementById('mInitials').textContent = btn.dataset.initials || '';
+                    document.getElementById('mBadge').textContent = btn.dataset.badge || 'Article';
+
+                    new bootstrap.Modal(document.getElementById('articleModal')).show();
+                });
+            },
+
+            updateStarUI(val) {
+                document.querySelectorAll('#starPicker i').forEach((s, i) => s.classList.toggle('active', i < val));
+            },
+
+            getFilteredSortedReviews() {
+                let filtered = [...this.reviews];
+                if (this.activeFilter === '5') filtered = filtered.filter(r => r.stars === 5);
+                else if (this.activeFilter === '4') filtered = filtered.filter(r => r.stars === 4);
+                else if (this.activeFilter === '3below') filtered = filtered.filter(r => r.stars <= 3);
+
+                if (this.activeSort === 'newest') filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+                else if (this.activeSort === 'oldest') filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+                else if (this.activeSort === 'highest') filtered.sort((a, b) => b.stars - a.stars);
+
+                return filtered;
+            },
+
+            renderReviews() {
+                const grid = document.getElementById('reviewGrid');
+                const allFiltered = this.getFilteredSortedReviews();
+                const display = this.showAll ? allFiltered : allFiltered.slice(0, 3);
+
+                if (display.length === 0) {
+                    grid.innerHTML = `<div class="col-12 text-center text-muted py-4">No reviews found for this filter.</div>`;
+                    return;
+                }
+
+                grid.innerHTML = display.map(r => `
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-3" style="background-color: var(--card);">
+                            <div class="card-body border-start border-5 rounded d-flex flex-column" style="border-color: var(--green) !important;">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold"
+                                         style="width:32px;height:32px;font-size:0.8rem;">${r.name.charAt(0)}</div>
+                                    <span class="fw-bold small" style="color: var(--green);">${r.name}</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fs-5">${'<i class="bi bi-star-fill"></i>'.repeat(r.stars)}</div>
+                                    <div class="text-end small text-muted fw-bold">${r.date}</div>
+                                </div>
+                                <p class="small text-black pt-3">"${r.text}"</p>
+
+                                <div class="d-flex flex-wrap gap-2 pt-2">
+                                    ${(r.tags || []).slice(0, 3).map(tag => `
+                                        <span class="badge rounded-pill px-3 py-2"
+                                            style="background: var(--badge); color: var(--darkgreen);">
+                                            ${tag}
+                                        </span>
+                                    `).join('')}
+
+                                    ${(r.tags && r.tags.length > 3) ? `
+                                        <span class="badge rounded-pill px-3 py-2 bg-secondary text-white">
+                                            +${r.tags.length - 3} more
+                                        </span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        };
+
+        App.init();
+    </script>
+</body>
+<footer style="background-color: #e8e8dc;">
+        <div class="container py-5">
+            <div class="row g-4">
+
+                <!-- Brand -->
+                <div class="col-lg-3 col-md-12">
+                    <img src="images/logo.png" alt="House of Us" class="img-fluid mb-3" style="max-width: 160px;">
+                    <p class="small mb-3" style="color: #555; line-height: 1.7;">
+                        Bringing people together over the comfort food you love and the cozy atmosphere you deserve.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/HouseOfUsValenzuela" target="_blank"
+                            class="rounded-2 d-flex align-items-center justify-content-center text-decoration-none"
+                            style="width:38px;height:38px;border:1px solid #2e5c1d;color:#2e5c1d;font-size:16px;background-color: #fff;">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/houseofusresto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
+                            class="rounded-2 d-flex align-items-center justify-content-center text-decoration-none"
+                            style="width:38px;height:38px;border:1px solid #2e5c1d;color:#2e5c1d;font-size:16px;background-color: #fff;">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigate -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">NAVIGATE</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li><a href="home.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">HOME</a></li>
+                                <li><a href="aboutus.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">ABOUT</a></li>
+                                <li><a href="menu.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">MENU &amp; SERVICES</a></li>
+                                <li><a href="blog.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">BLOG &amp; REVIEWS</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-5">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li><a href="support.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">SUPPORT</a></li>
+                                <li><a href="team.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">OUR TEAM</a></li>
+                                <li><a href="contact.html" class="text-decoration-none small"
+                                        style="color:#333; letter-spacing:0.5px;">CONTACTS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">CONTACTS</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="mailto:houseofus@gmail.com" class="text-decoration-none small"
+                                style="color:#333;">houseofus@gmail.com</a></li>
+                        <li><span class="small" style="color:#333;">09694022013</span></li>
+                        <li><span class="small" style="color:#333;">09193126874</span></li>
+                    </ul>
+                </div>
+
+                <!-- Reserve -->
+                <div class="col-lg-3 col-md-12">
+                    <h6 class="fw-bold mb-4" style="letter-spacing:2px; color:#2e5c1d;">RESERVATIONS</h6>
+                    <p class="small mb-3" style="color:#555; line-height:1.7;">
+                        Planning a visit? Book your table and we'll have everything ready for you.
+                    </p>
+                    <a href="contact.html"
+                        class="text-decoration-none small fw-semibold d-inline-block rounded-pill px-4 py-2 mb-2 text-white"
+                        style="background-color:#2e5c1d; letter-spacing:1px;">
+                        <i class="bi bi-calendar-check me-1"></i> RESERVE A TABLE
+                    </a>
+                    <ul class="list-unstyled d-flex flex-column gap-1 mt-3">
+                        <li class="small" style="color:#555;"><i class="bi bi-geo-alt-fill me-1"
+                                style="color:#2e5c1d;"></i> Valenzuela City</li>
+                        <li class="small" style="color:#555;"><i class="bi bi-geo-alt-fill me-1"
+                                style="color:#2e5c1d;"></i> Caloocan City</li>
+                        <li class="small" style="color:#555;"><i class="bi bi-clock-fill me-1"
+                                style="color:#2e5c1d;"></i> Mon–Sun, 11AM – 10PM</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="py-3" style="border-top: 2px solid #2e5c1d;">
+            <div class="container d-flex flex-wrap align-items-center gap-2">
+                <i class="bi bi-c-circle small" style="color:#555;"></i>
+                <p class="mb-0 small" style="color:#555;">2026 House Of Us. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</html>
